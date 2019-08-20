@@ -20,6 +20,9 @@ helpers do
   end
 end
 
+
+
+
 get '/' do
   erb :index
 end
@@ -29,6 +32,14 @@ require_relative 'routes/todo'
 require_relative 'routes/login'
 
 
+
+
+
+
+
+
+
+require_relative 'routes/plants'
 
 
 
