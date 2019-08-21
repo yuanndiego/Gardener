@@ -1,5 +1,74 @@
+/* Layout Page CSS ~ START */
+.top-navigation,.bottom-navigation{
+    width: 100%;
+}
+.top-nav-top-half{
+    height: 3.5em;
+    background-color: green;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+.top-nav-bottom-half{
+    height: 2em;
+    display: flex;
+    justify-content: space-around;
+}
+.menu-link{
+    flex-grow: 1;
+    text-align: center;
+    background-color: aquamarine;
+    padding: 0.5em;
+    text-decoration: none;
+    color: black;
+    font-size: 1em;
+    line-height: 1em;
+}
+.menu-link:hover{
+    border: 2px solid rgb(34, 135, 111);
+    line-height: calc(1em - 4px);
+}
+.menu-link[data-page="active"] {
+    background-color: green;
+    color: white;
+}
+.logo{
+    width: 2.5em;
+    height: 2.5em;
+    background-color: aquamarine;
+    border-radius: 50%;
+
+    /* Temporary Text CSS */
+    text-align: center;
+    line-height: 2.5em;
+}
+.username{
+    /* TODO: Add styling when user login functions */
+}
+
+.bottom-navigation{
+    height: 2em;
+    background-color: green;
+}
+/* Layout Page CSS ~ END */
+/* General Styling ~ START */
+
+/* Use this class in a 'main' tag
+that wraps your page content as
+this helps with alignment of 
+the bottom navigation bar  */
+.yield-container{
+    min-height: calc(100vh - 7.5em)
+}
+
+/* General Styling ~ END */
+
+
+
 .weather{
-    position: fixed;
+    position: relative;
     top: 0;
     right: 0;
     margin-right: 10px;
