@@ -24,5 +24,6 @@ get '/' do
 end
 
 require_relative 'routes/plants'
-require_relative 'routes/todo'
-require_relative 'routes/login'
+require_relative 'routes/todos'
+require_relative 'routes/sessions'
+
