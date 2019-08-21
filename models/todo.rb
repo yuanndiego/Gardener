@@ -3,3 +3,4 @@ class Todo < ActiveRecord::Base
     belongs_to :plant
     belongs_to :task
 end
+

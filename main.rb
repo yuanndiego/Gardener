@@ -6,6 +6,10 @@ also_reload File.expand_path(__dir__, 'routes/*')
 
 require 'bcrypt'
 require_relative 'database_config'
+require_relative 'models/user'
+require_relative 'models/plant'
+require_relative 'models/task'
+require_relative 'models/todo'
 
 enable :sessions
 
