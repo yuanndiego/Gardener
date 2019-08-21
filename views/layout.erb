@@ -3,11 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <title>To Do App</title>
+  <link rel='stylesheet' href='/stylesheets/reset.css'>
   <link rel='stylesheet' href='/stylesheets/main.css'>
 </head>
 <body>
+  <nav class="top-navigation">
+    <div class="top-nav-top-half">
+      <div class="logo">Logo</div>
+      <% if logged_in? %>
+      <div class="username">
+        Welcome <%= current_user.username%>!
+      </div>
+      <% end %>
+    </div>
+    <div class="top-nav-bottom-half">
+      <a href="/mydetails" class="menu-link" data-page="inactive">Details</a>
+      <a href="/myplants" class="menu-link" data-page="active">Plants</a>
+      <a href="/mytasks" class="menu-link" data-page="inactive">Tasks</a>
+    </div>
+  </nav>
 
   <%= yield %>
-
+  <nav class="bottom-navigation"></nav>
 </body>
 </html>
