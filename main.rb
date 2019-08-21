@@ -14,7 +14,7 @@ require_relative 'models/todo'
 enable :sessions
 
 helpers do
-  def loggedIn?
+  def logged_in?
     !!current_user
   end
 
