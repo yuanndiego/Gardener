@@ -1,4 +1,3 @@
-     
 require 'sinatra'
 require 'sinatra/reloader'
 also_reload File.expand_path(__dir__, 'models/*')
@@ -20,9 +19,6 @@ helpers do
   end
 end
 
-
-
-
 get '/' do
   erb :index
 end
@@ -30,16 +26,3 @@ end
 require_relative 'routes/plants'
 require_relative 'routes/todo'
 require_relative 'routes/login'
-
-
-
-
-
-
-
-
-
-require_relative 'routes/plants'
-
-
-
