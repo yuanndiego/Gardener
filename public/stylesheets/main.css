@@ -1,0 +1,28 @@
+.weather{
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin-right: 10px;
+    height: 100px;
+    width: 100px;
+    background: url(/weather_assets/Heavy_rain.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.cloud {
+    /* background-image: url("./images/embouchure.jpg"); */
+    background: url(cdn0.iconfinder.com/data/icons/large-weather-icons/512/Heavy_rain.png)
+}
+.container {
+    display: flex;
+    
+    flex-direction: column;
+    
+}
+.to-do-item {
+    border: black solid 1px;
+    width: 60%;
+
+}
+
