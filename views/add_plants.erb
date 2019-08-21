@@ -1,0 +1,47 @@
+<style>
+  img {
+    width: 100%;
+  }
+
+.plant_selected_opacity {
+      opacity: 0.;
+}
+
+  article {
+      display: inline-block;
+      width: 30%;
+  }
+</style>
+
+
+<h1>Select and Add More Plants</h1>
+
+<form action="/my_plants" method="post">
+<% @plants.each do |plant| %>
+   <article class = "plant-ui-card-container">
+        <img src="<%= plant.image_url%>" alt="">
+        <input class = "plant_selected" type="hidden" name="" value="<%= plant.id%>">
+        <%= plant.common_name.upcase %>
+        <%= plant.scientific_name %>
+   </article> 
+<% end %>
+
+    <button>Let's add your plants</button>
+</form>
+
+
+ <script>
+var plantUiCards = document.querySelectorAll(".plant-ui-card-container")
+
+const selectPlant = function(event) {
+    // document.querySelector(".plant_selected").name = "plantSelected[]"
+    var something = event.target.closest('.plant-ui-card-container').querySelector('.plant__selected')
+    something.name = "plantSelected[]"
+    
+    event.target.classList.add("plant_selected_opacity")
+    console.log("hello click");
+} 
+
+
+plantUiCards.forEach(plantUiCard => {plantUiCard.addEventListener('click', selectPlant)})
+ </script>
