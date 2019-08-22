@@ -130,36 +130,45 @@ the bottom navigation bar  */
 }
 /* My Details Styling */
 
-.weather{
-    position: relative;
-    top: 0;
-    right: 0;
+
+/* todo page */
+body {
+    background: #C96A6A
+}
+.cloud{
+    background: url(/weather_assets/clouds.png);
+}
+.weather {
+    margin-left: auto;
     margin-right: 10px;
     height: 100px;
     width: 100px;
-    background: url(/weather_assets/Heavy_rain.png);
     background-size: 100%;
     background-repeat: no-repeat;
 }
-
-.cloud {
-    /* background-image: url("./images/embouchure.jpg"); */
-    background: url(cdn0.iconfinder.com/data/icons/large-weather-icons/512/Heavy_rain.png)
-}
-.container {
+.container-for-todo {
     display: flex;
-    
     flex-direction: column;
-    
+    align-items: center;
 }
 .to-do-item {
-    border: black solid 1px;
-    width: 60%;
-
+    font-size: 1rem;
+    color: #163139;
+    display: flex;
+    justify-content: space-between;
+    border: solid #6D9848 1px;
+    background: #6D9848;
+    padding: 1rem 1rem;
+    width: 80%;
+    border-radius: 10px 10px;
+    padding: 1%;
+    transition: width 0.6s ease-in;
+    margin-bottom: 3%;
+    -webkit-box-shadow: 0px 6px 11px -2px rgba(0,0,0,0.64);    
 }
 
 
-/* Latha's changes */
+/* Login & Register Styling ~ START */
 html, body, * {
 	box-sizing: border-box;
   }
@@ -186,16 +195,17 @@ html, body, * {
 	font-size: 1.5em;
 	cursor: pointer;
 	-webkit-transition: all 0.5s ease;
-	  -moz-transition: all 0.5s ease;
-	  -o-transition: all 0.5s ease;
-	  transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
 	outline: none;
   }
   
-  .loginbtn:hover {
+
+.loginbtn:hover {
 	opacity 0.8;
 	box-shadow: 0 2px 5px #9a9a9a;
-  }
+}
   
   .overlay {
 	position: fixed;
@@ -452,6 +462,9 @@ html, body, * {
 	margin-left: 5px;
   }
 
+/* Login & Register Styling ~ END */
+
+/* Plants Routes Styling ~ START */
 .plant_image {
     width: 100%;
   }
@@ -489,3 +502,4 @@ html, body, * {
     opacity: 0;
 }
 
+/* Plants Routes Styling ~ END */

@@ -6,3 +6,4 @@ options = {
 }
 
 ActiveRecord::Base.establish_connection(options)
+ActiveRecord::Base.logger = Logger.new(STDOUT)
