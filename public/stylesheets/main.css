@@ -53,6 +53,7 @@
     background-color: green;
 }
 /* Layout Page CSS ~ END */
+
 /* General Styling ~ START */
 
 /* Use this class in a 'main' tag
@@ -65,7 +66,69 @@ the bottom navigation bar  */
 
 /* General Styling ~ END */
 
+/* My Details Styling */
+.mydetails-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.mydetails-container > form {
+    font-size: 1em;
+    line-height: 1.5em;
+    width: 20em;
+    background-color: blue;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
+    padding: 1em;
+    border-radius: 1em;
+}
 
+.mydetails-container > form > * {
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+}
+.label-input-pair{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.mydetails-container label {
+    flex-grow: 0;
+}
+.mydetails-container input {
+    flex-grow: 1;
+    max-width: 50%;
+    text-align: center;
+}
+.mydetails-container button {
+    width: 9.5em;
+    flex-grow: 0;
+    align-self: flex-end;
+    justify-self: flex-end;
+}
+.user_detail_errors, .user_detail_updates{
+    display:flex;
+    flex-direction:column;
+}
+.user_detail_errors > *, .user_detail_updates > * {
+    
+    font-size: 1em;
+    line-height: 1.5em;
+    padding: 1em;
+    margin: 1em;
+    border-radius: 1em;
+    width: auto;
+    flex-shrink: 1;
+}
+.user_detail_errors > * {
+    background-color: orange;
+}
+.user_detail_updates > * {
+    background-color: green;
+    color: white;
+}
+/* My Details Styling */
 
 .weather{
     position: relative;
@@ -94,6 +157,7 @@ the bottom navigation bar  */
     width: 60%;
 
 }
+
 
 /* Latha's changes */
 html, body, * {
@@ -387,3 +451,41 @@ html, body, * {
   p.check-mark label {
 	margin-left: 5px;
   }
+
+.plant_image {
+    width: 100%;
+  }
+
+.plant_selected_opacity {
+    opacity: 0.5;
+}
+
+.plant-ui-card-container {
+    display: inline-block;
+    width: 30%;
+    position: relative;
+    background-color: white;
+    box-shadow: 1px grey;
+}
+
+.add_plants_icons {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    width: 3em;
+    height: 3em;
+    opacity: 0.8;
+}
+
+.my-plant-ui-card-container {
+    display: inline-block;
+    width: 30%;
+    
+}
+
+.plant_info {
+    background-color: #6D9848;
+    transform: translateY(2px);
+    opacity: 0;
+}
+

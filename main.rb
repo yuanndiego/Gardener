@@ -15,6 +15,10 @@ require_relative 'models/todo'
 enable :sessions
 
 
+after do
+  ActiveRecord::Base.connection.close
+end
+
 helpers do
   def logged_in?
     !!current_user
@@ -36,3 +40,4 @@ end
 require_relative 'routes/plants'
 require_relative 'routes/todos'
 require_relative 'routes/sessions'
+require_relative 'routes/users'
