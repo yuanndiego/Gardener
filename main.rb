@@ -32,3 +32,4 @@ end
 require_relative 'routes/plants'
 require_relative 'routes/todos'
 require_relative 'routes/sessions'
+require_relative 'routes/users'

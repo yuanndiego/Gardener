@@ -1,0 +1,79 @@
+<main class="yield-container">
+
+
+    <div class="user_detail_errors">
+    <% if session[:password_error] != nil %>
+        <div><%=session[:password_error]%></div>
+        <% session[:password_error] = nil%>
+    <% end %>
+    <% if session[:email_error] != nil %>
+        <div><%=session[:email_error]%></div>
+        <% session[:email_error] = nil %>
+    <% end %>
+    <% if @errors != nil %>
+        <%@errors.each do |key,values| %>
+            <% values.each do |value|%>
+                <div>Error: <%=key.to_s%> <%=value%></div>
+            <% end %>
+        <% end %>
+    <% end %>
+    </div>
+    <div class="user_detail_updates">
+    <% if session[:password_updated] ==  true %>
+        <div>Password Updated</div>
+        <% session[:password_updated] = nil %>
+    <% end %>
+    <% if session[:email_updated] ==  true %>
+        <div>Email Updated</div>
+        <% session[:email_updated] = nil %>
+    <% end %>
+    <% if session[:username_updated] ==  true %>
+        <div>Username Updated</div>
+        <% session[:username_updated] = nil %>
+    <% end %>
+    </div>
+    <div class="mydetails-container">
+    <% current_user = User.first%>
+        <form action="/users/<%=current_user.id%>/update" method="post">
+            <input type="hidden" name="user_id" value="<%=current_user.id%>">
+            <div class="label-input-pair">
+                <label for="">Username</label>
+                <input type="text" name="username" placeholder="<%=current_user.username%>" value="">
+            </div>
+            <div class="label-input-pair">
+                <label for="">Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <input type="text" name="email" value="<%=current_user.email%>">
+            </div>
+            <div class="label-input-pair">
+                <label for="">Confirm Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <input type="text" name="confirm_email" value="">
+            </div>
+            <div class="label-input-pair">
+                <label for="">Password&nbsp;</label>
+                <input type="password" name="password" value="">
+            </div>
+            <div class="label-input-pair">
+                <label for="">Confirm Password</label>
+                <input type="password" name="confirm_password" value="">
+            </div>
+            <button>Update Details</button>
+        </form>
+
+        <form action="/users/<%=current_user.id%>/settings" method="post">
+            <input type="hidden" name="user_id" value="<%=current_user.id%>">
+            <div class="label-input-pair">
+                <label for="">Garden Location</label>
+                <input type="text" name="garden_location" value="Some Setting">
+            </div>
+            <div class="label-input-pair">
+                <label for="">Setting 2</label>
+                <input type="text" name="setting-1" value="Some Setting">
+            </div>
+            <div class="label-input-pair">
+                <label for="">Setting 3</label>
+                <input type="text" name="setting-1" value="Some Setting">
+            </div>
+            <button>Update Settings</button>
+        </form>
+    </div>
+</main>
