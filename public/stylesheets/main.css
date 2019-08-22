@@ -167,12 +167,13 @@ body {
     -webkit-box-shadow: 0px 6px 11px -2px rgba(0,0,0,0.64);    
 }
 
-/* Latha's changes */
+
+/* Login & Register Styling ~ START */
 html, body, * {
 	box-sizing: border-box;
   }
   
-  .container {
+  .logincontainer {
 	width: 100%;
 	height: 100vh;
 	background-color: #e7e7f6;
@@ -180,7 +181,7 @@ html, body, * {
 	z-index: 2;
   }
   
-  button {
+  .loginbtn {
 	position: relative;
 	left: 50%;
 	top: 50%;
@@ -200,10 +201,11 @@ html, body, * {
 	outline: none;
   }
   
-  button:hover {
-	opacity: 0.8;
+
+.loginbtn:hover {
+	opacity 0.8;
 	box-shadow: 0 2px 5px #9a9a9a;
-  }
+}
   
   .overlay {
 	position: fixed;
@@ -365,7 +367,7 @@ html, body, * {
 	transform: translateX(-450px);
   }
   
-  form label {
+  .loginlable {
 	font-size: 1.1em;
 	color: #ceaee8;
 	margin-left: 23px;
@@ -420,7 +422,7 @@ html, body, * {
   form.register input {
 	border-radius: 5px;
 	width: 90%;
-	height: 40px;
+	height: 30px;
 	margin: 5px 5% 15px 5%;
 	padding: 10px;
 	font-size: 1em;
@@ -459,5 +461,45 @@ html, body, * {
   p.check-mark label {
 	margin-left: 5px;
   }
-/* todo page end */
 
+/* Login & Register Styling ~ END */
+
+/* Plants Routes Styling ~ START */
+.plant_image {
+    width: 100%;
+  }
+
+.plant_selected_opacity {
+    opacity: 0.5;
+}
+
+.plant-ui-card-container {
+    display: inline-block;
+    width: 30%;
+    position: relative;
+    background-color: white;
+    box-shadow: 1px grey;
+}
+
+.add_plants_icons {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    width: 3em;
+    height: 3em;
+    opacity: 0.8;
+}
+
+.my-plant-ui-card-container {
+    display: inline-block;
+    width: 30%;
+    
+}
+
+.plant_info {
+    background-color: #6D9848;
+    transform: translateY(2px);
+    opacity: 0;
+}
+
+/* Plants Routes Styling ~ END */

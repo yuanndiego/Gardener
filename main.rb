@@ -14,6 +14,11 @@ require_relative 'models/todo'
 
 enable :sessions
 
+
+after do
+  ActiveRecord::Base.connection.close
+end
+
 helpers do
   def logged_in?
     !!current_user
@@ -24,6 +29,9 @@ helpers do
   end
 end
 
+after do 
+  ActiveRecord::Base
+end
 get '/' do
   redirect '/login' unless logged_in?
   erb :index
