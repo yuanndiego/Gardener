@@ -14,6 +14,10 @@ require_relative 'models/todo'
 
 enable :sessions
 
+after do
+  ActiveRecord::Base.connection.close
+end
+
 helpers do
   def logged_in?
     !!current_user

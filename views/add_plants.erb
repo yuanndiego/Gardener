@@ -1,28 +1,16 @@
-<style>
-  img {
-    width: 100%;
-  }
 
-.plant_selected_opacity {
-      opacity: 0.;
-}
-
-  article {
-      display: inline-block;
-      width: 30%;
-  }
-</style>
-
-
-<h1>Select and Add More Plants</h1>
+<h1>Select Plants from Our List</h1>
 
 <form action="/my_plants" method="post">
 <% @plants.each do |plant| %>
    <article class = "plant-ui-card-container">
-        <img src="<%= plant.image_url%>" alt="">
         <input class = "plant_selected" type="hidden" name="" value="<%= plant.id%>">
-        <%= plant.common_name.upcase %>
-        <%= plant.scientific_name %>
+        <img class="plant_image" src="<%= plant.image_url%>" alt="">
+        <div class = "plant_info">
+            <%= plant.common_name.upcase %>
+            <%= plant.scientific_name %>
+        </div>
+        <div><img class = "add_plants_icons" src="/icon_assets/baseline-add_circle_outline-24px.svg" alt="" srcset=""></div>
    </article> 
 <% end %>
 
@@ -30,18 +18,3 @@
 </form>
 
 
- <script>
-var plantUiCards = document.querySelectorAll(".plant-ui-card-container")
-
-const selectPlant = function(event) {
-    // document.querySelector(".plant_selected").name = "plantSelected[]"
-    var something = event.target.closest('.plant-ui-card-container').querySelector('.plant__selected')
-    something.name = "plantSelected[]"
-    
-    event.target.classList.add("plant_selected_opacity")
-    console.log("hello click");
-} 
-
-
-plantUiCards.forEach(plantUiCard => {plantUiCard.addEventListener('click', selectPlant)})
- </script>

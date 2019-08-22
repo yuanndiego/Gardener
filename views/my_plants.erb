@@ -1,1 +1,16 @@
-<h1>Hello my plants</h1>
+<h1>My Plants List</h1>
+
+
+<% @plants.each do |plant| %>
+   <article class = "my-plant-ui-card-container">
+        <img class="plant_image" src="<%= plant.image_url%>" alt="">
+        <%= plant.common_name.upcase %>
+        <%= plant.scientific_name %>
+   </article> 
+<% end %>
+
+<a href="/plants/new">
+   <article class = "my-plant-ui-card-container">
+        <img class="plant_image" src="https://via.placeholder.com/150" alt="">
+   </article> 
+</a>
