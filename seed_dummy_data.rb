@@ -5,7 +5,7 @@ require_relative 'models/task'
 require_relative 'models/todo'
 
 u1 = User.new()
-u1.username = 'Jenny Black'
+u1.username = 'Jimremrermy Brantingtonington'
 u1.email = '1@1.com'
 u1.password = 'pudding'
 u1.save

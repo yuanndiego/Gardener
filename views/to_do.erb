@@ -1,20 +1,45 @@
-<h1>to do</h1>
+
  
 <p class="weather"></p>
 
-
 <div class="container">
-    <div class="to-do-item"><%= @dummy_data[0][:task] %> <%= @dummy_data[0][:plant_name] %></div>
-    <div class="to-do-item"><%= @dummy_data[1][:task] %> <%= @dummy_data[1][:plant_name] %></div>
-    <div class="to-do-item"><%= @dummy_data[2][:task] %> <%= @dummy_data[2][:plant_name] %></div>
+
+<% @todos.each do |todo| %>
+
+    <div class="to-do-item">
+        <h1><%= todo.task.name %></h1>
+        <h2><%= todo.plant.common_name %></h2>
+    </div>
+
+<% end %>
+
 </div>
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
 
 <script> 
 toDoItem = document.querySelector('.to-do-item')
+weather = document.querySelector('.weather')
 
-click = () => {
+ $.ajax({
+            dataType: 'json',
+            url: "http://api.openweathermap.org/data/2.5/weather?q=Coburg,aus&APPID=65d2c718348e35c15481b8dbf08c238d",
+ }).done(function (msg) {
+    
+    var foot = msg
+    debugger
+    if (foot.weather[0].main === "Clouds") {
+        debugger
+        weather.classList.add('.clouds')
+    }            
+})
+
+clicked = () => {
     console.log('kahjsgdkfgd')
 }
 
-toDoItem.addEventListener('click', click)
+toDoItem.addEventListener('click', clickeds)
 </script>

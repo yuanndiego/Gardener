@@ -1,27 +1,14 @@
-
-
-
+require 'pry'
 get '/todo' do
+    @todos = Todo.joins(:plant, :task).includes(:plant, :task).where(user_id: 9).order(due_date: :desc)
+
+   
+
+    # "SELECT tasks.name, tasks.due_date, todos.plant_id, plants.common_name, todos.user_id FROM todos INNER JOIN tasks ON tasks.id = todos.task_id INNER JOIN plants ON plants.id = todos.plant_id WHERE todos.user_id = 9 ORDER BY due_date DESC;"
+
     
-    @dummy_data = [{ 
-        :id => 1,
-        :plant_name => "apple tree", 
-        :task => "prune",
-        :due_date => "20"
-        },
-        { 
-        :id => 2,
-        :plant_name => "peach tree", 
-        :task => "prune",
-        :due_date => "23"
-        },
-        { 
-        :id => 3,
-        :plant_name => "plum tree", 
-        :task => "prune",
-        :due_date => "18"
-    }]
 
     erb :to_do
 
 end
+
