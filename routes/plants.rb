@@ -6,7 +6,6 @@ get '/my_plants' do
     erb :my_plants
 end
 
-
 get '/plants/new' do
     @plants = Plant.all
     erb :add_plants
