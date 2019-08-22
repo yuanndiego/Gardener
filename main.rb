@@ -11,6 +11,7 @@ require_relative 'models/plant'
 require_relative 'models/task'
 require_relative 'models/todo'
 
+
 enable :sessions
 
 helpers do
@@ -24,6 +25,7 @@ helpers do
 end
 
 get '/' do
+  redirect '/login' unless logged_in?
   erb :index
 end
 
