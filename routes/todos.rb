@@ -1,6 +1,9 @@
 require 'pry'
 get '/todo' do
-    @todos = Todo.joins(:plant, :task).includes(:plant, :task).where(user_id: 9).order(due_date: :desc)
+    
+    current_user = User.first
+
+    @todos = Todo.joins(:plant, :task).includes(:plant, :task).where(user_id: current_user.id).order(due_date: :desc)
 
    
 
