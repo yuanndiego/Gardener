@@ -41,7 +41,7 @@ $(function() {
       $formRegister.addClass('move-left');
     });
     
-    $('input').on('submit', function(e){
-      e.preventDefault(); //used to prevent submission of form...remove for real use
-    });
+    // $('input').on('submit', function(e){
+    //   e.preventDefault(); //used to prevent submission of form...remove for real use
+    // });
   });
