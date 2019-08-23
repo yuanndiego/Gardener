@@ -261,6 +261,7 @@ body {
 	transform: translateY(10px);
 	transition: all .5s ease;
 }
+
   
 @media (min-width: 32em) {
 	.main-popup {
@@ -354,7 +355,7 @@ body {
   
 .popup-content {
   height: 400px;
-  width:100%;
+  width: 100%;
 	overflow: hidden;
 }
   
