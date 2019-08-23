@@ -2,11 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>To Do App</title>
   <link rel="shortcut icon" href="#" />
   <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
   <link rel='stylesheet' href='/stylesheets/reset.css'>
   <link rel='stylesheet' href='/stylesheets/main.css'>
+
 </head>
 <body>
   <nav class="top-navigation">
@@ -18,11 +20,13 @@
       </div>
       <% end %>
     </div>
+    <% if logged_in? %>
     <div class="top-nav-bottom-half">
       <a href="/mydetails" class="menu-link" data-page="inactive">To Dos</a>
       <a href="/my_plants" class="menu-link" data-page="active">My Plants</a>
       <a href="/todo" class="menu-link" data-page="inactive">My Info</a>
     </div>
+    <% end %>
   </nav>
 
 <script

@@ -1,18 +1,20 @@
-<h1>My Plants</h1>
+<main class="yield-container">
+    <h1>My Plants</h1>
 
 
-<% @plants.each do |plant| %>
-   <article class = "my-plant-ui-card-container">
-        <img class="plant_image" src="<%= plant.image_url%>" alt="">
-        <div class = "plant_info">
-            <div><%= plant.common_name.upcase %></div>
-            <div><%= plant.scientific_name %> </div>
-        </div>
-   </article> 
-<% end %>
+    <% @plants.each do |plant| %>
+    <article class = "my-plant-ui-card-container">
+            <img class="plant_image" src="<%= plant.image_url%>" alt="">
+            <div class = "plant_info">
+                <div><%= plant.common_name.upcase %></div>
+                <div><%= plant.scientific_name %> </div>
+            </div>
+    </article> 
+    <% end %>
 
-<a href="/plants/new">
-   <article class = "my-plant-ui-card-container">
-        <img class="plant_image" src="https://via.placeholder.com/150" alt="">
-   </article> 
-</a>
+    <a href="/plants/new">
+    <article class = "my-plant-ui-card-container">
+            <img class="plant_image" src="https://via.placeholder.com/150" alt="">
+    </article> 
+    </a>
+</main>
