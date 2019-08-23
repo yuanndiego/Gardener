@@ -26,4 +26,12 @@ post '/my_plants' do
             todo.save
         end
     end
+    redirect '/my_plants'
 end
+
+# delete '/my_plants' do
+#     plant = plant.find(params[:id])
+#     plant.delete
+#     redirect '/my_plants'
+# end
+

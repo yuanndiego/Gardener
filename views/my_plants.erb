@@ -1,20 +1,53 @@
 <main class="yield-container">
     <h1>My Plants</h1>
 
-
-    <% @plants.each do |plant| %>
-    <article class = "my-plant-ui-card-container">
+    <div class = "plants-container">
+        <% @plants.each do |plant| %>
+       <article class = "my-plant-ui-card-container">
             <img class="plant_image" src="<%= plant.image_url%>" alt="">
+                <%# <img src="/icon_assets/24px.svg" alt=""> %>
             <div class = "plant_info">
                 <div><%= plant.common_name.upcase %></div>
                 <div><%= plant.scientific_name %> </div>
             </div>
-    </article> 
+       </article> 
     <% end %>
 
-    <a href="/plants/new">
-    <article class = "my-plant-ui-card-container">
-            <img class="plant_image" src="https://via.placeholder.com/150" alt="">
-    </article> 
-    </a>
+
+    <%# <a href="#openModal"> 
+        <article>
+        <img class = "add-plant-2" src="/icon_assets/addplant2.png" alt="">
+        </article>
+    </a> %>
+
+
+
+    <a href="#openModal"> <img class = "add-plant-image" src="/icon_assets/addplant2.png" alt="" srcset=""></a>
+
+        <div id="openModal" class="modalDialog">
+            <div>
+                <div class = "add-plant-header">
+                    <a href="#close" title="Close" class="close">X</a>
+                    <form action="/my_plants" method="post">
+                    <h1>Select Plants from Our List</h1>
+                </div>
+                <% @plants.each do |plant| %>
+                <article class = "plant-ui-card-container">
+                        <input class = "plant_selected" type="hidden" name="" value="<%= plant.id%>">
+                        <img class="plant_image" src="<%= plant.image_url%>" alt="">
+                        <div class = "plant_info">
+                            <div><%= plant.common_name.upcase %></div>
+                            <div><%= plant.scientific_name %> </div>
+                        </div>
+                        <div><img class = "add_plants_icons" src="/icon_assets/baseline-add_circle-24px.svg" alt="" srcset=""></div>
+                </article> 
+                <% end %>
+
+                    <div>
+                    <button class = "add-plants-btn">Add Plants</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </main>
