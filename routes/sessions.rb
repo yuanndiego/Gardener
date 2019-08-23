@@ -1,9 +1,10 @@
+
 require 'pry'
 get '/login' do 
     erb :signup
 end
 
-post "/session" do
+post "/sessions" do
   
     user = User.find_by(email: params[:email])
    
@@ -17,25 +18,25 @@ post "/session" do
     
   
   end
-  delete '/session' do
+  delete '/sessions' do
     #1.destroy the session
     session[:user_id] = nil
     #2.redirect
-    redirect '/signup'
+    redirect '/login'
   end
 
-#   get '/createaccount' do
-#     erb :signup
-#   end
   
   post "/createaccount" do
       user = User.new
       user.username = params[:username]
       user.email = params[:email]
-      user.password =params[:password]
+      user.password = params[:password]
       user.save
+      session[:user_id] = user.id 
 
     redirect '/plants/new'
+    
+
   end
   
   

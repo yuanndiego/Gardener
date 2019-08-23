@@ -1,37 +1,37 @@
+<main class="yield-container">
+    <p class="weather"></p>
 
- 
-<p class="weather"></p>
+    <div class="container-for-todo">
 
-<div class="container-for-todo">
+    <% @todos.each do |todo| %>
 
-<% @todos.each do |todo| %>
+        <div class="to-do-item">
+            <h1><%= todo.task.name %></h1>
+            <h2><%= todo.plant.common_name %></h2>
+        </div>
 
-    <div class="to-do-item">
-        <h1><%= todo.task.name %></h1>
-        <h2><%= todo.plant.common_name %></h2>
+    <% end %>
+
     </div>
 
-<% end %>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
 
-</div>
+    <script> 
+    toDoItem = document.querySelector('.to-do-item')
+    weather = document.querySelector('.weather')
 
-<script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
-
-<script> 
-toDoItem = document.querySelector('.to-do-item')
-weather = document.querySelector('.weather')
-
- $.ajax({
-            dataType: 'json',
-            url: "http://api.openweathermap.org/data/2.5/weather?q=Coburg,aus&APPID=65d2c718348e35c15481b8dbf08c238d",
- }).done(function (msg) {
-    
-    var foot = msg
-    if (foot.weather[0].main === "Clouds") {
-        weather.classList.add('.clouds')
-    }            
-})
-</script>
+    $.ajax({
+                dataType: 'json',
+                url: "http://api.openweathermap.org/data/2.5/weather?q=Coburg,aus&APPID=65d2c718348e35c15481b8dbf08c238d",
+    }).done(function (msg) {
+        
+        var foot = msg
+        if (foot.weather[0].main === "Clouds") {
+            weather.classList.add('.clouds')
+        }            
+    })
+    </script>
+</main>
