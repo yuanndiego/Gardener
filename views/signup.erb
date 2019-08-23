@@ -14,10 +14,10 @@
     </div><!--.popup-header-->
     <div class="popup-content">
       <form action="/sessions"  method="post" class="sign-in">
-        <label class= "loginlable" for="email">Email:</label>
-        <input type="text" name="email">
-        <label class= "loginlable" for="password">Password:</label>
-        <input type="password" name="password">
+        <label class= "loginlabel" for="email">Email:</label>
+        <input type="text" id="email">
+        <label class= "loginlabel" for="password">Password:</label>
+        <input type="password" id="password">
         <%# <p class="check-mark">
           <input type="checkbox" id="remember-me">
           <label for="remember-me">Remember me</label>
@@ -26,11 +26,11 @@
       </form>
     
       <form action="/createaccount"  method="post" class="register">
-        <label class= "loginlable" for="">Name:</label>
+        <label class= "loginlabel" for="">Name:</label>
         <input type="text" name='username'>
-        <label class= "loginlable" for="">Email:</label>
+        <label class= "loginlabel" for="">Email:</label>
         <input type="text" name='email'>
-        <label class= "loginlable" for="">Password:</label>
+        <label class= "loginlabel" for="">Password:</label>
         <input type="password" name='password'>
         <%# <label for="password-confirmation">Confirm Password:</label>
         <input type="password-confirmation" id="password-confirmation"> %>

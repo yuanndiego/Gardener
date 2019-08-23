@@ -1,47 +1,64 @@
-/* Layout Page CSS ~ START */
+/* General Styling ~ START */
+
+:root {
+  --main-bg-color: #C96A6A;
+  /* --main-bg-color: #CA8E74; */
+  /* --main-bg-color: #DBB2A3; */
+  --text-and-top-half-nav: #054456;
+  --bottom-half-nav: #E9E4D2;
+  --bottom-half-nav-hover: #D1CDBD;
+  --general-div-and-highlight-text: #9AB584;
+  --highlighted-div: #B8CBA8;
+}
+.yield-container{
+  min-height: calc(100vh - 9em);
+  background-color: var(--main-bg-color);
+}
 body {
-    font-family: 'Oswald', sans-serif;
+  font-family: 'Oswald', sans-serif;
 }
 
+/* General Styling ~ END */
+
+/* Layout Page CSS ~ START */
 .top-navigation,.bottom-navigation{
-    width: 100%;
+  width: 100%;
 }
 .top-nav-top-half{
-    font-weight: bolder;
-    font-size: 1.5em;
-    color: #6D9848;
-    height: 3.0em;
-    background-color: #054456;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
+  font-weight: bolder;
+  font-size: 1.5em;
+  color: var(--general-div-and-highlight-text);
+  height: 3.0em;
+  background-color: var(--text-and-top-half-nav);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
 }
 .top-nav-bottom-half {
-    height: 2.3em;
-    display: flex;
-    justify-content: center;
+  height: 2.3em;
+  display: flex;
+  justify-content: center;
 }
 .menu-link{
-    flex-grow: 1;
-    text-align: center;
-    background-color:#E9E4D2;
-    padding: 0.5em;
-    text-decoration: none;
-    color:#054456;
-    font-size: 1em;
-    line-height: 1em;
-    font-weight: bold;
+  text-align: center;
+  background-color: var(--bottom-half-nav);
+  padding: 0.5em;
+  text-decoration: none;
+  color:var(--text-and-top-half-nav);
+  font-size: 1em;
+  line-height: 1em;
+  font-weight: bold;
 }
 .menu-link:hover{
-    background-color: #D1CDBD;
-    line-height: calc(1em - 2px);
+  background-color: var(--bottom-half-nav-hover);
+  line-height: calc(1em - 2px);
 }
 .menu-link[data-page="active"] {
-    background-color: #E9E4D2;
-    color: #054456;
-    text-decoration: underline #054456;
+  background-color: var(--bottom-half-nav);
+  color: var(--text-and-top-half-nav);
+  text-decoration: underline var(--text-and-top-half-nav);
 }
 /* .logo{
     width: 2.5em;
@@ -55,170 +72,153 @@ body {
 }  */
 
 .username{
-    color: #CA8E74;
-    /* TODO: Add styling when user login functions */
+  color: var(--general-div-and-highlight-text);
+  /* TODO: Add styling when user login functions */
 }
 
 .bottom-navigation{
-    height: 2em;
-    background-color: #054456;
+  height: 2.3em;
+  background-color: var(--text-and-top-half-nav);
 }
 /* Layout Page CSS ~ END */
 
-/* General Styling ~ START */
-
-/* Use this class in a 'main' tag
-that wraps your page content as
-this helps with alignment of 
-the bottom navigation bar  */
-.yield-container{
-    min-height: calc(100vh - 7.5em)
-}
-
-/* General Styling ~ END */
-
 /* My Details Styling */
 .mydetails-container{
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 .mydetails-container > form {
-    font-size: 1em;
-    line-height: 1.5em;
-    width: 20em;
-    background-color: blue;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    margin: 1em;
-    padding: 1em;
-    border-radius: 1em;
+  font-size: 1em;
+  line-height: 1.5em;
+  width: 20em;
+  background-color: blue;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  margin: 1em;
+  padding: 1em;
+  border-radius: 1em;
 }
 
 .mydetails-container > form > * {
-    margin-top: 0.25em;
-    margin-bottom: 0.25em;
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
 }
 .label-input-pair{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 .mydetails-container label {
-    flex-grow: 0;
+  flex-grow: 0;
 }
 .mydetails-container input {
-    flex-grow: 1;
-    max-width: 50%;
-    text-align: center;
+  flex-grow: 1;
+  max-width: 50%;
+  text-align: center;
 }
 .mydetails-container button {
-    width: 9.5em;
-    flex-grow: 0;
-    align-self: flex-end;
-    justify-self: flex-end;
+  width: 9.5em;
+  flex-grow: 0;
+  align-self: flex-end;
+  justify-self: flex-end;
 }
 .user_detail_errors, .user_detail_updates{
-    display:flex;
-    flex-direction:column;
+  display:flex;
+  flex-direction:column;
 }
 .user_detail_errors > *, .user_detail_updates > * {
-    
-    font-size: 1em;
-    line-height: 1.5em;
-    padding: 1em;
-    margin: 1em;
-    border-radius: 1em;
-    width: auto;
-    flex-shrink: 1;
+  
+  font-size: 1em;
+  line-height: 1.5em;
+  padding: 1em;
+  margin: 1em;
+  border-radius: 1em;
+  width: auto;
+  flex-shrink: 1;
 }
 .user_detail_errors > * {
-    background-color: orange;
+  background-color: orange;
 }
 .user_detail_updates > * {
-    background-color: green;
-    color: white;
+  background-color: green;
+  color: white;
 }
 /* My Details Styling */
 
 
 /* todo page */
-body {
-    background: #C96A6A
-}
 .cloud{
-    background: url(/weather_assets/clouds.png);
+  background: url(/weather_assets/clouds.png);
 }
 .weather {
-    margin-left: auto;
-    margin-right: 10px;
-    height: 100px;
-    width: 100px;
-    background-size: 100%;
-    background-repeat: no-repeat;
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: 10px;
+  height: 100px;
+  width: 100px;
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 .container-for-todo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .to-do-item {
-    font-size: 1rem;
-    color: #163139;
-    display: flex;
-    justify-content: space-between;
-    border: solid #6D9848 1px;
-    background: #6D9848;
-    padding: 1rem 1rem;
-    width: 80%;
-    border-radius: 10px 10px;
-    padding: 1%;
-    transition: width 0.6s ease-in;
-    margin-bottom: 3%;
-    -webkit-box-shadow: 0px 6px 11px -2px rgba(0,0,0,0.64);    
+  font-size: 1rem;
+  color: var(--text-and-top-half-nav);
+  display: flex;
+  justify-content: space-between;
+  border: solid #6D9848 1px;
+  background: #6D9848;
+  padding: 1rem 1rem;
+  width: 80%;
+  border-radius: 10px 10px;
+  padding: 1%;
+  transition: width 0.6s ease-in;
+  margin-bottom: 3%;
+  -webkit-box-shadow: 0px 6px 11px -2px rgba(0,0,0,0.64);    
 }
 
 
 /* Login & Register Styling ~ START */
-html, body, * {
-	box-sizing: border-box;
-  }
+.logincontainer {
+  background-color: var(--main-bg-color);
+	border-radius: 0.5em;
+  z-index: 2;
+  display: flex;
+  width: 100%;
+	height: 100%;
+  min-height: calc(100vh - 6.8em);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
   
-  .logincontainer {
-	width: 100%;
-	height: 100vh;
-	background-color: #e7e7f6;
-	border-radius: 5px;
-	z-index: 2;
-  }
-  
-  .loginbtn {
-	position: relative;
-	left: 50%;
-	top: 50%;
-	height: 70px;
-	width: 300px;
-	margin: -35px 0 0 -100px;
-	padding: 15px 30px;
-	border-radius: 5px;
-	background-color: #ceaee8;
-	color: #fff;
+.loginbtn {
+  height: 3em;
+	width: 11em;
+  padding: 1em;
+  line-height: 0em;
+	border-radius: 0.5em;
+	background-color: var(--general-div-and-highlight-text);
+	color: var(--text-and-top-half-nav);
 	font-size: 1.5em;
 	cursor: pointer;
 	-webkit-transition: all 0.5s ease;
 	-moz-transition: all 0.5s ease;
 	-o-transition: all 0.5s ease;
 	transition: all 0.5s ease;
-	outline: none;
-  }
-  
+  outline: none;
+}
 
 .loginbtn:hover {
+	background-color: var(--highlighted-div);
 	opacity: 0.8;
-	box-shadow: 0 2px 5px #9a9a9a;
 }
   
-  .overlay {
+.overlay {
 	position: fixed;
 	left: 0;
 	top: 0;
@@ -229,62 +229,61 @@ html, body, * {
 	opacity: 0;
 	visibility: hidden;
 	transition: all .5s ease;
-  }
+}
   
-  .overlay.visible {
+.overlay.visible {
 	opacity: 1;
 	visibility: visible;
-  }
+}
   
-  .main-popup {
+.main-popup {
 	position: fixed;
 	left: 0;
 	top: 30px;
 	margin: 0;
 	width: 100%;
 	height: 450px;
-	background-color: #e7e7f6;
+	background-color: var(--bottom-half-nav);
 	border-radius: 5px;
 	z-index: 15;
 	opacity: 0;
 	visibility: hidden;
 	transform: translateY(-20px);
 	transition: all .5s ease;
-	/*overflow: hidden;*/
-  }
+}
   
-  .main-popup.visible {
+.main-popup.visible {
 	opacity: 1;
 	visibility: visible;
 	transform: translateY(10px);
 	transition: all .5s ease;
-  }
+}
   
-  @media (min-width: 500px) {
+@media (min-width: 32em) {
 	.main-popup {
-	  width: 500px;
+	  width: 32em;
 	  left: 50%;
-	  margin: 0 0 0 -250px;
+	  margin: 0 0 0 -16em;
 	}
-  }
+}
   
-  .popup-header {
+.popup-header {
 	position: relative;
 	padding: 0;
 	margin: 0;
 	height: 62px;
 	width: 100%;
-  }
+}
   
-  #popup-close-button a {
+#popup-close-button a {
 	position: absolute;
 	right: 10px;
 	top: -30px;
 	width: 22px;
 	height: 22px;
-  }
+}
   
-  #popup-close-button a::before {
+#popup-close-button a::before {
 	content: '';
 	position: absolute;
 	right: 10px;
@@ -297,9 +296,9 @@ html, body, * {
 	-ms-transform: rotate(45deg);
 	-o-transform: rotate(45deg);
 	transform: rotate(45deg);
-  }
+}
   
-  #popup-close-button a::after {
+#popup-close-button a::after {
 	content: '';
 	position: absolute;
 	right: 10px;
@@ -312,56 +311,50 @@ html, body, * {
 	-ms-transform: rotate(-45deg);
 	-o-transform: rotate(-45deg);
 	transform: rotate(-45deg);
-  }
+}
   
-  .popup-header ul {
+.popup-header ul {
 	margin: 0;
 	padding: 0;
-  }
+}
   
-  .popup-header ul li {
+.popup-header ul li {
 	text-align: center;
 	list-style: none;
 	width: 50%;
 	float: left;
-  }
+}
   
-  .popup-header ul li a {
+.popup-header ul li a {
 	display: block;
 	padding: 20px 0;
 	margin: 0;
 	text-decoration: none;
 	font-size: 1.2em;
-  }
+}
+#sign-in, #register {
+	background-color: var(--bottom-half-nav-hover);
+	color: var(--text-and-top-half-nav);
+	
+}
+#sign{
+  border-radius: 1em 0 0 0;
+}
+#register{
+  border-radius: 0 1em 0 0;
+}
   
-  #sign-in {
-	background-color: #ceaee8;
-	color: #fff;
-	border-radius: 5px 0 0 0;
-  }
-  
-  #sign-in.active {
-	color: #ceaee8;
+#sign-in.active,#register.active  {
+	color: var(--text-and-top-half-nav);
 	background-color: transparent;
-  }
+}
   
-  #register {
-	background-color: #ceaee8;
-	color: #fff;
-	border-radius: 0 5px 0 0;
-  }
-  
-  #register.active {
-	color: #ceaee8;
-	background-color: transparent;
-  }
-  
-  .popup-content {
+.popup-content {
 	height: 400px;
 	overflow: hidden;
-  }
+}
   
-  form.sign-in {
+form.sign-in {
 	position: relative; 
 	top: 40px;
 	left: 0;
@@ -371,20 +364,20 @@ html, body, * {
 	-moz-transition: all .35s;
 	-o-transition: all .35s;
 	transition: all .35s;
-  }
+}
   
-  form.sign-in.move-left {
+form.sign-in.move-left {
 	opacity: 0;
 	transform: translateX(-450px);
-  }
+}
   
-  .loginlable {
+.loginlabel {
 	font-size: 1.1em;
 	color: #ceaee8;
 	margin-left: 23px;
-  }
+}
   
-  form.sign-in input {
+form.sign-in input {
 	border-radius: 5px;
 	width: 90%;
 	height: 40px;
@@ -394,9 +387,9 @@ html, body, * {
 	color: #ceaee8;
 	outline: none;
 	border: none;
-  }
+}
   
-  input#submit {
+input#submit {
 	background-color: #ceaee8;
 	color: #fff;
 	height: 50px;
@@ -410,9 +403,9 @@ html, body, * {
 	border-radius: 5px;
 	font-size: 1em;
 	border: none;
-  }
+}
   
-  form.register {
+form.register {
 	position: relative; 
 	top: -280px;
 	left: 0;
@@ -423,14 +416,14 @@ html, body, * {
 	-moz-transition: all .35s;
 	-o-transition: all .35s;
 	transition: all .35s;
-  }
+}
   
-  form.register.move-left {
+form.register.move-left {
 	opacity: 1;
 	transform: translateX(0);
-  }
+}
   
-  form.register input {
+form.register input {
 	border-radius: 5px;
 	width: 90%;
 	height: 30px;
@@ -440,9 +433,9 @@ html, body, * {
 	color: #ceaee8;
 	outline: none;
 	border: none;
-  }
+}
   
-  p.check-mark {
+p.check-mark {
 	position: relative;
 	left: 50%;
 	width: 200px;
@@ -451,13 +444,13 @@ html, body, * {
 	text-align: center;
 	color: #ceaee8;
 	font-size: .8em;
-  }
+}
   
-  p.check-mark a {
+p.check-mark a {
 	color: #a48bb9;
-  }
+}
   
-  p.check-mark input {
+p.check-mark input {
 	border-radius: 0;
 	width: auto;
 	height: auto;
@@ -467,77 +460,77 @@ html, body, * {
 	color: #ceaee8;
 	outline: none;
 	border: none;
-  }
+}
   
-  p.check-mark label {
+p.check-mark label {
 	margin-left: 5px;
-  }
+}
 
 /* Login & Register Styling ~ END */
 
 /* Plants Routes Styling ~ START */
 .plant_image {
-    width: 100%;
-  }
+  width: 100%;
+}
 
 .plant_selected_opacity {
-    opacity: 0.5;
+  opacity: 0.5;
 }
 
 .plant-ui-card-container {
-    display: inline-block;
-    width: 30%;
-    position: relative;
-    cursor: pointer;
-    overflow: hidden;
-    padding: 0.3em;
-    background-color: #E9E4D2;
-    box-shadow: 2px grey;
+  display: inline-block;
+  width: 30%;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  padding: 0.3em;
+  background-color: #E9E4D2;
+  box-shadow: 2px grey;
 }
 
 .add_plants_icons {
-    position: absolute;
-    top: 1em;
-    right: 1em;
-    width: 3em;
-    height: 3em;
-    opacity: 0.8;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  width: 3em;
+  height: 3em;
+  opacity: 0.8;
 }
 
 .my-plant-ui-card-container {
-    display: inline-block;
-    width: 30%;
-    position: relative;
-    overflow: hidden;
-    padding: 0.3em;
-    background-color: #E9E4D2;
-    box-shadow: 2px grey;
+  display: inline-block;
+  width: 30%;
+  position: relative;
+  overflow: hidden;
+  padding: 0.3em;
+  background-color: #E9E4D2;
+  box-shadow: 2px grey;
 }
 
 .plant_info {
-    font-weight: bold;
-    background-color: #9AB584;
-    transform: translateY(2px);
-    opacity: 0;
-    visibility: hidden;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 0.5em;
-    color: #054456;
+  font-weight: bold;
+  background-color: #9AB584;
+  transform: translateY(2px);
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.5em;
+  color: #054456;
 }
 
 .plant-ui-card-container:hover .plant_info {
-    visibility: visible;
-    opacity: 1;
-    transition: all 0.4s linear;
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.4s linear;
 }
 
 .my-plant-ui-card-container:hover .plant_info {
-    visibility: visible;
-    opacity: 1;
-    transition: all 0.4s linear;
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.4s linear;
 }
 
 /* Plants Routes Styling ~ END */
