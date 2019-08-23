@@ -9,12 +9,11 @@
   <link rel='stylesheet' href='/stylesheets/reset.css'>
   <link rel='stylesheet' href='/stylesheets/main.css'>
   <link rel="stylesheet" href="/stylesheets/todo.css">
-
 </head>
 <body>
   <nav class="top-navigation">
     <div class="top-nav-top-half">
-      <div class="logo">GARDENER.</div>
+      <div>GARDENER.</div>
       <% if logged_in? %>
       <div class="username">
         Welcome <%= current_user.username%>!
@@ -32,11 +31,13 @@
     </div>
     <% if logged_in? %>
     <div class="top-nav-bottom-half">
-      <a href="/mydetails" class="menu-link" data-page="inactive">To Dos</a>
-      <a href="/my_plants" class="menu-link" data-page="active">My Plants</a>
-      <a href="/todo" class="menu-link" data-page="inactive">My Info</a>
+      <a href="/todo" class="menu-link" data-page="<% if session[:url] != 'todos'%>in<% end %>active">To Dos</a>
+      <a href="/my_plants" class="menu-link" data-page="<% if session[:url] != 'my_plants'%>in<% end %>active">My Plants</a>
+      <a href="/mydetails" class="menu-link" data-page="<% if session[:url] != 'my_details'%>in<% end %>active">My Info</a>
     </div>
     <% end %>
+
+    <% session[:url] = nil%>
   </nav>
 
 <script
