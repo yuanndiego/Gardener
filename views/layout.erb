@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>To Do App</title>
-  <link rel="shortcut icon" href="#" />
+  <title>GARDENER. your plantbuddy</title>
+  <link rel="shortcut icon" href="/icon_assets/icons8-sprout-32.png">
   <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
   <link rel='stylesheet' href='/stylesheets/reset.css'>
   <link rel='stylesheet' href='/stylesheets/main.css'>
@@ -17,8 +17,17 @@
       <% if logged_in? %>
       <div class="username">
         Welcome <%= current_user.username%>!
+        
+   <form action="/sessions" method= "post">
+    <input type="hidden" name= "_method" value= "delete">
+    <button>logout</button>
+  </form>
+  <% else %>
+  <a href="/login">login</a>
+  <% end %>
+  
       </div>
-      <% end %>
+     
     </div>
     <% if logged_in? %>
     <div class="top-nav-bottom-half">

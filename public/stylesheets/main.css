@@ -215,6 +215,7 @@ body {
 
 .loginbtn:hover {
 	background-color: var(--highlighted-div);
+	opacity: 0.8;
 }
   
 .overlay {
