@@ -25,3 +25,7 @@ post '/api/todo' do
         todo.save
     end
 end
+
+get '/api/todo' do
+    todo = Todo.find_by(id: params[:todo_id])
+end

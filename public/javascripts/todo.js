@@ -19,16 +19,58 @@ StoreApiInformation = () => {
         })
 }
 
-var changeCompleteValue = () => {
+var changeCompleteValue = (event) => {
    console.log('kaskhdsf')
    var toDoItem = event.target
     $.ajax({
         method: 'post',
         url: '/api/todo',
         data: { todo_id: event.target.getAttribute('value') }
-    }).done(function() {
-        // toDoItem.closest('.to-do-item').classList.add('test')
+    }).done(function(res) {
+        toDoItem.closest('.to-do-item').classList.add('test')
+        setTimeout(()=>{
+            toDoItem.closest('.to-do-item').classList.add('zero_height')
+        }, 800);
+
+        // copy the dom element
+        // delete from original locatin
+        // add to new lcoation
+        // Reverse animations
+
     })
+}
+
+var acc = document.getElementsByClassName("accordionOne");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    panelOne = this.nextElementSibling;
+    if (panelOne.style.display === "block") {
+      panelOne.style.display = "none";
+    } else {
+      panelOne.style.display = "block";
+      panelTwo.style.display = "none"
+    }
+  });
+}
+
+var acc = document.getElementsByClassName("accordionTwo");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    panelTwo = this.nextElementSibling;
+    if (panelTwo.style.display === "block") {
+      panelTwo.style.display = "none";
+    } else {
+      panelTwo.style.display = "block";
+      panelOne.style.display = "none"
+
+    }
+  });
 }
 
 taskCompleteButtons.forEach(taskCompleteButton => {
