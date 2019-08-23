@@ -35,6 +35,7 @@ body {
   align-items: center;
   padding-left: 0.5em;
   padding-right: 0.5em;
+
 }
 .top-nav-bottom-half {
   height: 2.3em;
@@ -147,6 +148,7 @@ body {
 /* My Details Styling */
 
 
+
 /* todo page */
 .cloud{
   background: url(/weather_assets/clouds.png);
@@ -180,6 +182,7 @@ body {
   margin-bottom: 3%;
   -webkit-box-shadow: 0px 6px 11px -2px rgba(0,0,0,0.64);    
 }
+
 
 
 /* Login & Register Styling ~ START */
