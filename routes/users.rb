@@ -38,8 +38,6 @@ post '/users/:id/update' do
             end
         else
             @errors = user.errors.messages
-            binding.pry
-
         end
     end
 
