@@ -357,7 +357,8 @@ html, body, * {
   }
   
   .popup-content {
-	height: 400px;
+  height: 400px;
+  width:100%;
 	overflow: hidden;
   }
   

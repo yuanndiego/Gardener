@@ -31,11 +31,15 @@ post "/sessions" do
       user.username = params[:username]
       user.email = params[:email]
       user.password = params[:password]
+      
       user.save
-      session[:user_id] = user.id 
 
-    redirect '/plants/new'
-    
+      if user.valid?
+        session[:user_id] = user.id 
+        redirect '/plants/new'
+      end
+
+      erb :signup
 
   end
   
