@@ -3,6 +3,7 @@ require 'pry'
 get '/my_plants' do 
     # @plants = Plant.where(user_id: current_user)
     @plants = Plant.all
+    session[:url] = 'my_plants'
     erb :my_plants
 end
 

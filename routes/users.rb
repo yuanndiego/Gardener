@@ -1,11 +1,14 @@
 require 'pry'
 get '/mydetails' do 
+    session[:url] = 'my_details'
     erb :mydetails
 end
 
 post '/users/:id/update' do
     
     user = User.find_by(id: params[:id]);
+
+    
 
 
     if params[:password] != params[:confirm_password]
