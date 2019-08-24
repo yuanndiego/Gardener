@@ -468,7 +468,10 @@ p.check-mark label {
 
 /* Plants Routes Styling ~ START */
 .plant_image {
-  width: 100%;
+  object-fit: cover;
+  max-height: 100%;
+   max-width: 100%;
+  /* overflow: hidden; */
 }
 
 .plant_selected_opacity {
@@ -476,14 +479,19 @@ p.check-mark label {
 }
 
 .plant-ui-card-container {
+  /* border: 1px solid #E9E4D2; */
   display: inline-block;
-  width: 30%;
+  height: 300px;
+  width: 400px;
   position: relative;
   cursor: pointer;
   overflow: hidden;
-  padding: 0.3em;
+  padding: 0.8em;
+  margin: 1em 0em;
   background-color: #E9E4D2;
+  border: 2px solid #054456;
   box-shadow: 2px grey;
+  border-radius: 5px;
 }
 
 .add_plants_icons {
@@ -497,17 +505,22 @@ p.check-mark label {
 
 .my-plant-ui-card-container {
   display: inline-block;
-  width: 30%;
+  height: 300px;
+  width: 400px;
   position: relative;
   overflow: hidden;
-  padding: 0.3em;
+  padding: 0.8em;
+  margin: 1em 0em;
+  /* cursor: pointer; */
   background-color: #E9E4D2;
   box-shadow: 2px grey;
+  border-radius: 5px;
 }
 
 .plant_info {
   font-weight: bold;
-  background-color: #9AB584;
+  /* text-align: center; */
+  background-color: #E9E4D2;
   transform: translateY(2px);
   opacity: 0;
   visibility: hidden;
@@ -516,7 +529,26 @@ p.check-mark label {
   left: 0;
   right: 0;
   padding: 0.5em;
-  color: #054456;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  align-items: left;
+}
+
+.plant_details {
+	color: #054456;
+	font-size: 1.3em;
+	align-items: left;
+	padding: 5px;
+}
+
+
+.delete-image {
+	width: 35px;
+	height: 35px;
+	opacity: 0.5;
+	align-items: end; 
+	padding-right: 10px;
 }
 
 .plant-ui-card-container:hover .plant_info {
@@ -574,7 +606,7 @@ p.check-mark label {
 
 .close {
 	background: #054456;
-	color: #C96A6A;
+	color: #E9E4D2;
 	line-height: 2em;
 	position: absolute;
 	right: -12px;
@@ -596,14 +628,15 @@ p.check-mark label {
 
 .plants-container {
     position: relative;
-    text-align: center;
+	text-align: center;
+	padding: 15px 20px 15px 20px
 }
 
 .add-plant-image {
     position: fixed;
     box-shadow: 2px grey;
-    bottom: 3em;
-    left: 2em;
+    top: 6em;
+    right: 2em;
     width: 6em;
     height: 6em;
     opacity: 0.8;
@@ -621,6 +654,29 @@ p.check-mark label {
     text-decoration: underline;
 }
 
+.my-plants-header {
+	padding: 8px;
+	color: #E9E4D2;
+	font-size: 2em;
+	text-align: left;
+	padding-left: 1.5em
+}
+
+.my-plants-header > p {
+	padding: 2px;
+	color: #E9E4D2;
+	font-size: 0.5em;
+	text-align: left;
+	margin: 0;
+}
+
+.plants-body {
+	padding-top: 20px;
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+}
+
 .add-plants-btn {
     font-family: 'Oswald', sans-serif;
     background-color: #054456;
@@ -631,7 +687,8 @@ p.check-mark label {
     display: inline-block;
     font-size: 16px;
     opacity: 1;
-    border-radius: 10px;
+	border-radius: 10px;
+	border: none;
 }
 
 .add-plants-btn:hover {

@@ -11,7 +11,7 @@ post "/sessions" do
     if user && user.authenticate(params[:password])
         
         session[:user_id] = user.id 
-        redirect '/'
+        redirect '/my_plants'
      else
         erb :signup
     end
