@@ -46,9 +46,27 @@ body {
   padding-right: 0.5em;
 
 }
-.login-text{
+.login-text,.logout-btn{
   color: white;
   text-decoration: none;
+}
+.logout-btn{
+  color: var(--bottom-half-nav) !important;
+  background: none;
+  border: 2px solid var(--bottom-half-nav);
+  border-radius: 1.5em;
+  font-size: 1em;
+  line-height: 2em;
+  font-family: Oswald, sans-serif;
+  margin-left: 1em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  transition: background-color 0.3s ease-in;
+}
+.logout-btn:hover{
+  /* border: 2px solid white;
+  color: white !important; */
+  background-color: var(--main-bg-color);
 }
 .top-nav-bottom-half {
   height: 2.3em;
@@ -74,14 +92,15 @@ body {
 }
 .menu-link[data-page="active"] {
   color: var(--text-and-top-half-nav);
-  /* text-decoration: underline var(--text-and-top-half-nav); */
   border-bottom: 2px solid var(--text-and-top-half-nav);
 }
 
 .username{
   color: var(--general-div-and-highlight-text);
-  /* TODO: Add styling when user login functions */
+  display: flex;
+  align-items: center; 
 }
+
 
 .bottom-navigation{
   height: 2.3em;
@@ -192,7 +211,7 @@ body {
 }
 
 /* Login & Register Styling ~ START */
-.logincontainer {
+.logincontainer,.unknown-page-container {
   background-color: var(--main-bg-color);
 	border-radius: 0.5em;
   z-index: 2;

@@ -1,34 +1,34 @@
-<main class="yeild-container">
-<p class="weather"></p>
+<main class="yield-container">
+    <p class="weather"></p>
 
-<div class="container-for-todo">
-<button class="accordionOne">incomplete</button>
-<div class="panel">
-<% @todos.each do |todo| %>
-    <% if todo.complete == false %>    
-        <div class="to-do-item">
-            <h1><%= todo.task.name %></h1>
-            <h2><%= todo.plant.common_name %></h2>
-            <p class="task_complete_button" name="todo_id" value="<%= todo.id %>">🌳</p>
-        </div>
+    <div class="container-for-todo">
+    <button class="accordionOne">incomplete</button>
+    <div class="panel">
+    <% @todos.each do |todo| %>
+        <% if todo.complete == false %>    
+            <div class="to-do-item">
+                <h1><%= todo.task.name %></h1>
+                <h2><%= todo.plant.common_name %></h2>
+                <p class="task_complete_button" name="todo_id" value="<%= todo.id %>">🌳</p>
+            </div>
+        <% end %>
     <% end %>
-<% end %>
-</div>
-<button class="accordionTwo">complete</button>
-<div class="panel">
-<% @todos.each do |todo| %>
-    <% if todo.complete == true %>    
-        <div class="to-do-item">
-            <h1><%= todo.task.name %></h1>
-            <h2><%= todo.plant.common_name %></h2>
-            <p class="task_complete_button" name="todo_id" value="<%= todo.id %>">🌳</p>
-        </div>
+    </div>
+    <button class="accordionTwo">complete</button>
+    <div class="panel">
+    <% @todos.each do |todo| %>
+        <% if todo.complete == true %>    
+            <div class="to-do-item">
+                <h1><%= todo.task.name %></h1>
+                <h2><%= todo.plant.common_name %></h2>
+                <p class="task_complete_button" name="todo_id" value="<%= todo.id %>">🌳</p>
+            </div>
+        <% end %>
     <% end %>
-<% end %>
-</div>
+    </div>
 
-</div>
+    </div>
 
 
-<script src="/javascripts/todo.js"></script>
+    <script src="/javascripts/todo.js"></script>
 </main>
