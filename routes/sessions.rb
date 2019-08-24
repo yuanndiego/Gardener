@@ -39,7 +39,9 @@ post "/createaccount" do
     session[:user_id] = user.id 
     redirect '/plants/new'
   else
-    if user.errors != nil 
+    if user.errors != nil
+      user.errors.messages.tap { |msg| msg.delete(:password_digest) }
+      user.errors.messages.tap { |msg| msg.delete(:password) }
       session[:signup_error] = "#{user.errors.messages.keys.join(', ')} already taken"
     end
     redirect '/login'

@@ -18,7 +18,6 @@ body {
   font-family: 'Oswald', sans-serif;
   background-color: var(--text-and-top-half-nav) !important;
 }
-
 .centre-404{
   width: 100%;
   height: 100%;
@@ -175,41 +174,126 @@ body {
 
 
 
-/* todo page */
+/* Todo page  ~ START */
 .cloud{
   background: url(/weather_assets/clouds.png);
 }
 .weather {
-  margin-top: 0;
   margin-left: auto;
   margin-right: 10px;
-  height: 100px;
+  margin-top: 0;
   width: 100px;
   background-size: 100%;
   background-repeat: no-repeat;
+  height: 100px;
 }
 .container-for-todo {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+.panel {
+  min-width: 25em;
+  width: 90%;
+  max-width: 60em;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bottom-half-nav-hover);
+  border: 2px solid var(--text-and-top-half-nav);
+  border-radius: 1em;
+  margin-bottom: 1em;
+  align-items: center;
+  padding-bottom: 0.5em;
+}
+.panel > button {
+  width: 100%;
+  font-size: 1.25em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin-bottom: 0.25em;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border: none;
+  background-color: var(--bottom-half-nav);
+  color: var(--text-and-top-half-nav);
+  border-bottom: 0.5px solid var(--text-and-top-half-nav);
+}
 
-/* color: var(--text-and-top-half-nav); */
 .to-do-item {
   font-size: 1rem;
   color: var(--text-and-top-half-nav);
   display: flex;
   justify-content: space-between;
+  align-items: center;
   border: solid var(--general-div-and-highlight-text) 1px;
   background-color: var(--general-div-and-highlight-text);
-  padding: 1rem 1rem;
-  width: 80%;
+  width: 90%;
   border-radius: 10px 10px;
   padding: 1%;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
   transition: width 0.6s ease-in;
-  margin-bottom: 3%;
+  margin-top: 1.5%;
+  margin-bottom: 1.5%;
   -webkit-box-shadow: 0px 6px 11px -2px rgba(0,0,0,0.64);    
 }
+.to-do-item h1{
+  flex-basis: 30%;
+  height: 100%;
+}
+.to-do-item h2{
+  flex-basis: 30%;
+}
+.to-do-item p{
+  flex-basis: 20%;
+  text-align: right;
+}
+
+.closed{
+  /* display: flex; */
+  height: 3em;
+}
+.closed > .to-do-item {
+  height: 0;
+  padding: 0;
+  opacity: 0;
+  border: 0;
+}
+.closed > button {
+  border-radius: 1rem;
+  border: none;
+  z-index: 2;
+  width: 100%;
+}
+
+.zero-width {
+  width: 0;
+  padding-left: 0;
+  padding-right: 0;
+  align-self:flex-start;
+  margin-left: 10%;
+}
+
+.zero-width > * {
+  opacity: 0;
+}
+.zero_height {
+  height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  border: none;
+  display:none;
+  z-index: -1;
+}
+.zero_height > * {
+  display: none;
+}
+
+.accordionOne,.accordionTwo {
+  z-index: 2;
+}
+
+/* Todo page  ~ START */
 
 /* Login & Register Styling ~ START */
 .logincontainer,.unknown-page-container {
