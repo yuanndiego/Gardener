@@ -325,7 +325,7 @@ body {
 	float: left;
 }
   
-.popup-header ul li a {
+.popup-header ul li a{
 	display: block;
 	padding: 20px 0;
 	margin: 0;
@@ -366,6 +366,13 @@ form.sign-in {
 	-o-transition: all .35s;
 	transition: all .35s;
 }
+
+form.sign-in.vertical-shift-signin {
+  top: 30px;
+}
+form.register.vertical-shift-register {
+  top: -305px;
+}
   
 form.sign-in.move-left {
 	opacity: 0;
@@ -376,6 +383,22 @@ form.sign-in.move-left {
 	font-size: 1.1em;
 	color: var(--text-and-top-half-nav);
 	margin-left: 23px;
+}
+.loginlabel-error{
+  font-size: 1.1em;
+  color: var(--main-bg-color) !important;
+  text-align: center;
+  margin-top: 0em !important;
+  margin-bottom: 15px !important;
+  background-color: var(--bottom-half-nav-hover);
+}
+.loginlabel-error2{
+  font-size: 1.1em;
+  color: var(--main-bg-color) !important;
+  text-align: center;
+  margin-top: 0.5em !important;
+  margin-bottom: 0.35em !important;
+  background-color: var(--bottom-half-nav-hover);
 }
   
 form.sign-in input {
