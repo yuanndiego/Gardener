@@ -18,6 +18,15 @@ body {
   font-family: 'Oswald', sans-serif;
 }
 
+.centre-404{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding-top: 20vh;
+  padding-bottom: 20vh;
+  line-height: 30vh;
+  font-size: 2em;
+}
 /* General Styling ~ END */
 
 /* Layout Page CSS ~ START */
@@ -36,6 +45,10 @@ body {
   padding-left: 0.5em;
   padding-right: 0.5em;
 
+}
+.login-text{
+  color: white;
+  text-decoration: none;
 }
 .top-nav-bottom-half {
   height: 2.3em;
@@ -160,13 +173,15 @@ body {
   flex-direction: column;
   align-items: center;
 }
+
+/* color: var(--text-and-top-half-nav); */
 .to-do-item {
   font-size: 1rem;
   color: var(--text-and-top-half-nav);
   display: flex;
   justify-content: space-between;
-  border: solid #6D9848 1px;
-  background: #6D9848;
+  border: solid var(--general-div-and-highlight-text) 1px;
+  background-color: var(--general-div-and-highlight-text);
   padding: 1rem 1rem;
   width: 80%;
   border-radius: 10px 10px;
@@ -175,8 +190,6 @@ body {
   margin-bottom: 3%;
   -webkit-box-shadow: 0px 6px 11px -2px rgba(0,0,0,0.64);    
 }
-
-
 
 /* Login & Register Styling ~ START */
 .logincontainer {
@@ -287,7 +300,7 @@ body {
 	top: 0;
 	width: 3px;
 	height: 25px;
-	background-color: #fff;
+	background-color: var(--bottom-half-nav);
 	-webkit-transform: rotate(45deg);
 	-moz-transform: rotate(45deg);
 	-ms-transform: rotate(45deg);
@@ -302,7 +315,7 @@ body {
 	top: 0;
 	width: 3px;
 	height: 25px;
-	background-color: #fff;
+	background-color: var(--bottom-half-nav);
 	-webkit-transform: rotate(-45deg);
 	-moz-transform: rotate(-45deg);
 	-ms-transform: rotate(-45deg);
@@ -322,7 +335,7 @@ body {
 	float: left;
 }
   
-.popup-header ul li a {
+.popup-header ul li a{
 	display: block;
 	padding: 20px 0;
 	margin: 0;
@@ -363,6 +376,13 @@ form.sign-in {
 	-o-transition: all .35s;
 	transition: all .35s;
 }
+
+form.sign-in.vertical-shift-signin {
+  top: 30px;
+}
+form.register.vertical-shift-register {
+  top: -305px;
+}
   
 form.sign-in.move-left {
 	opacity: 0;
@@ -371,8 +391,24 @@ form.sign-in.move-left {
   
 .loginlabel {
 	font-size: 1.1em;
-	color: #ceaee8;
+	color: var(--text-and-top-half-nav);
 	margin-left: 23px;
+}
+.loginlabel-error{
+  font-size: 1.1em;
+  color: var(--main-bg-color) !important;
+  text-align: center;
+  margin-top: 0em !important;
+  margin-bottom: 15px !important;
+  background-color: var(--bottom-half-nav-hover);
+}
+.loginlabel-error2{
+  font-size: 1.1em;
+  color: var(--main-bg-color) !important;
+  text-align: center;
+  margin-top: 0.5em !important;
+  margin-bottom: 0.35em !important;
+  background-color: var(--bottom-half-nav-hover);
 }
   
 form.sign-in input {
@@ -382,14 +418,14 @@ form.sign-in input {
 	margin: 5px 5% 30px 5%;
 	padding: 10px;
 	font-size: 1em;
-	color: #ceaee8;
+	color: var(--text-and-top-half-nav);
 	outline: none;
 	border: none;
 }
   
 input#submit {
-	background-color: #ceaee8;
-	color: #fff;
+	background-color: var(--general-div-and-highlight-text);
+	color: var(--text-and-top-half-nav);
 	height: 50px;
 	width: 90%;
 	margin-left: 5%;
@@ -428,40 +464,9 @@ form.register input {
 	margin: 5px 5% 15px 5%;
 	padding: 10px;
 	font-size: 1em;
-	color: #ceaee8;
+	color: var(--text-and-top-half-nav);
 	outline: none;
 	border: none;
-}
-  
-p.check-mark {
-	position: relative;
-	left: 50%;
-	width: 200px;
-	margin: 0 0 0 -100px;
-	padding: 0;
-	text-align: center;
-	color: #ceaee8;
-	font-size: .8em;
-}
-  
-p.check-mark a {
-	color: #a48bb9;
-}
-  
-p.check-mark input {
-	border-radius: 0;
-	width: auto;
-	height: auto;
-	margin: 0;
-	padding: 0;
-	font-size: 2em;
-	color: #ceaee8;
-	outline: none;
-	border: none;
-}
-  
-p.check-mark label {
-	margin-left: 5px;
 }
 
 /* Login & Register Styling ~ END */
@@ -488,7 +493,7 @@ p.check-mark label {
   overflow: hidden;
   padding: 0.8em;
   margin: 1em 0em;
-  background-color: #E9E4D2;
+  background-color: var(--bottom-half-nav);
   border: 2px solid #054456;
   box-shadow: 2px grey;
   border-radius: 5px;
@@ -511,16 +516,14 @@ p.check-mark label {
   overflow: hidden;
   padding: 0.8em;
   margin: 1em 0em;
-  /* cursor: pointer; */
-  background-color: #E9E4D2;
+  background-color: var(--bottom-half-nav);
   box-shadow: 2px grey;
   border-radius: 5px;
 }
 
 .plant_info {
   font-weight: bold;
-  /* text-align: center; */
-  background-color: #E9E4D2;
+  background-color: var(--general-div-and-highlight-text);
   transform: translateY(2px);
   opacity: 0;
   visibility: hidden;
@@ -568,10 +571,10 @@ p.check-mark label {
 /* modal box on plants pag */
 .modalDialog {
 	position: fixed;
-    font-family: 'Oswald', sans-serif;
-    color: #054456;
-    font-weight: bolder;
-    padding: 0.5em;
+  font-family: 'Oswald', sans-serif;
+  color: var(--text-and-top-half-nav);
+  font-weight: bolder;
+  padding: 0.5em;
 	top: 0;
 	right: 0;
 	bottom: 0;
@@ -598,10 +601,7 @@ p.check-mark label {
 	margin: 10% auto;
 	padding: 5px 20px 13px 20px;
 	border-radius: 10px;
-    background-color: #E9E4D2;
-	/* background: -moz-linear-gradient(#fff, #999);
-	background: -webkit-linear-gradient(#fff, #999);
-	background: -o-linear-gradient(#fff, #999); */
+  background-color:  var(--bottom-half-nav);
 }
 
 .close {
@@ -623,7 +623,7 @@ p.check-mark label {
 	box-shadow: 1px 1px 3px #000;
 }
 
-.close:hover { background: #1D5666; }
+.close:hover { background: var(--text-and-top-half-nav); } /* #1D5666; */
 
 
 .plants-container {
@@ -679,8 +679,8 @@ p.check-mark label {
 
 .add-plants-btn {
     font-family: 'Oswald', sans-serif;
-    background-color: #054456;
-    color: #E9E4D2;
+    background-color: var(--text-and-top-half-nav);
+    color: var(--bottom-half-nav);
     text-align: center;
     padding: 15px 32px;
     text-decoration: none;
