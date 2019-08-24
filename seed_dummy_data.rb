@@ -13,7 +13,7 @@ u1.save
 u2 = User.new()
 u2.username = 'Fenton Badgerton'
 u2.email = '2@2.com'
-u2.password = 'a'
+u2.password = '123'
 u2.save
 
 # seed data for plants
