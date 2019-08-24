@@ -2,33 +2,30 @@
     <p class="weather"></p>
 
     <div class="container-for-todo">
-    <button class="accordionOne">incomplete</button>
-    <div class="panel">
-    <% @todos.each do |todo| %>
-        <% if todo.complete == false %>    
-            <div class="to-do-item">
-                <h1><%= todo.task.name %></h1>
-                <h2><%= todo.plant.common_name %></h2>
-                <p class="task_complete_button" name="todo_id" value="<%= todo.id %>">🌳</p>
-            </div>
-        <% end %>
-    <% end %>
+        <div class="panel panelOne">
+            <button class="accordionOne"><span>To Dos</span></button>
+            <% @todos.each do |todo| %>
+                <% if todo.complete == false %>    
+                    <div class="to-do-item">
+                        <h1><%= Date::MONTHNAMES[todo.task.due_date.month][0..2] %>: <%= todo.task.name %></h1>
+                        <h2><%= todo.plant.common_name %></h2>
+                        <p class="task_complete_button" name="todo_id" value="<%= todo.id %>">🌳</p>
+                    </div>
+                <% end %>
+            <% end %>
+        </div>
+        <div class="panel panelTwo closed">
+            <button class="accordionTwo closed"><span>Done</span></button>
+            <% @todos.each do |todo| %>
+                <% if todo.complete == true %>    
+                    <div class="to-do-item">
+                        <h1><%= Date::MONTHNAMES[todo.task.due_date.month][0..2] %>: <%= todo.task.name %></h1>
+                        <h2><%= todo.plant.common_name %></h2>
+                        <p class="task_complete_button" name="todo_id" value="<%= todo.id %>">🌳</p>
+                    </div>
+                <% end %>
+            <% end %>
+        </div>
     </div>
-    <button class="accordionTwo">complete</button>
-    <div class="panel">
-    <% @todos.each do |todo| %>
-        <% if todo.complete == true %>    
-            <div class="to-do-item">
-                <h1><%= todo.task.name %></h1>
-                <h2><%= todo.plant.common_name %></h2>
-                <p class="task_complete_button" name="todo_id" value="<%= todo.id %>">🌳</p>
-            </div>
-        <% end %>
-    <% end %>
-    </div>
-
-    </div>
-
-
     <script src="/javascripts/todo.js"></script>
 </main>
