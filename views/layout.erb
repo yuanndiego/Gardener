@@ -22,7 +22,7 @@
     <input type="hidden" name= "_method" value= "delete">
     <button>logout</button>
   </form>
-  <% else %>
+  <% elsif session[:url] != 'login'%>
   <a class="login-text" href="/login">login</a>
   <% end %>
   
@@ -36,8 +36,7 @@
       <a href="/mydetails" class="menu-link" data-page="<% if session[:url] != 'my_details'%>in<% end %>active">My Info</a>
     </div>
     <% end %>
-
-    <% session[:url] = nil%>
+    
   </nav>
 
 <script
@@ -46,6 +45,8 @@
   crossorigin="anonymous"></script>
 
   <%= yield %>
+  <%# Cleanse all session token data as needed %>
+  <% session[:url] = nil%>
   <nav class="bottom-navigation"></nav>
   <script src="/javascripts/application.js"></script>
 </body>

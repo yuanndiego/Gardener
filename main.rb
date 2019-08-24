@@ -11,9 +11,7 @@ require_relative 'models/plant'
 require_relative 'models/task'
 require_relative 'models/todo'
 
-
 enable :sessions
-
 
 after do
   ActiveRecord::Base.connection.close
@@ -29,9 +27,6 @@ helpers do
   end
 end
 
-after do 
-  ActiveRecord::Base
-end
 get '/' do
   redirect '/login' unless logged_in?
   redirect '/my_plants'
@@ -41,3 +36,7 @@ require_relative 'routes/plants'
 require_relative 'routes/todos'
 require_relative 'routes/sessions'
 require_relative 'routes/users'
+
+get '/:unknown' do
+  erb :unknown_page
+end
