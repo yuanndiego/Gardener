@@ -1,20 +1,30 @@
 
-<h1>Select Plants from Our List</h1>
 
-<form action="/my_plants" method="post">
-<% @plants.each do |plant| %>
-   <article class = "plant-ui-card-container">
-        <input class = "plant_selected" type="hidden" name="" value="<%= plant.id%>">
-        <img class="plant_image" src="<%= plant.image_url%>" alt="">
-        <div class = "plant_info">
-            <div><%= plant.common_name.upcase %></div>
-            <div><%= plant.scientific_name %> </div>
-        </div>
-        <div><img class = "add_plants_icons" src="/icon_assets/baseline-add_circle-24px.svg" alt="" srcset=""></div>
-   </article> 
-<% end %>
+<div class = "plants-container">
+    <div class = "my-plants-header">
+        <h1>LET'S GET YOU STARTED</h1>
+        <p> Here is our library of plants, select plants you have in your garden...</p>
+    </div>
+    <div class = "plants-body">
+        <form action="/my_plants" method="post">
+            <% @plants.each do |plant| %>
+            <article class = "plant-ui-card-container">
+                    <input class = "plant_selected" type="hidden" name="" value="<%= plant.id%>">
+                    <img class="plant_image" src="<%= plant.image_url%>" alt="">
+                    <div class = "plant_info">
+                        <div class = "plant_details">
+                            <div><%= plant.common_name.upcase %></div>
+                            <div><%= plant.scientific_name %> </div>
+                        </div>
+                    </div>
+                    <div><img class = "add_plants_icons" src="/icon_assets/baseline-add_circle-24px.svg" alt="" srcset=""></div>
+            </article> 
+            <% end %>
 
-    <button>Let's add your plants</button>
-</form>
-
+            <div>
+                <button class = "add-plants-btn">Add Plants</button>
+            </div>
+        </form>
+    </div>
+</div>
 
