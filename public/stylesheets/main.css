@@ -16,6 +16,7 @@
 }
 body {
   font-family: 'Oswald', sans-serif;
+  background-color: var(--text-and-top-half-nav) !important;
 }
 
 .centre-404{

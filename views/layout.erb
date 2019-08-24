@@ -45,7 +45,14 @@
 
   <%= yield %>
   <%# Cleanse all session token data as needed %>
-  <% session[:url] = nil%>
+  <% session[:url] = nil %>
+  <% session[:login_error] = nil %>
+  <% session[:signup_error] = nil %>
+  <% session[:email_error] = nil %>
+  <% session[:email_updated] = nil %>
+  <% session[:password_error] = nil %>
+  <% session[:username_error] = nil %>
+  <% session[:username_updated] = nil %>
   <nav class="bottom-navigation"></nav>
   <script src="/javascripts/application.js"></script>
 </body>
