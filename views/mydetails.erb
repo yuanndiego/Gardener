@@ -32,7 +32,6 @@
     <% end %>
     </div>
     <div class="mydetails-container">
-    <% current_user = User.first%>
         <form action="/users/<%=current_user.id%>/update" method="post">
             <h1 class= "my-info-header">MY INFO</h1>
             <input type="hidden" name="user_id" value="<%=current_user.id%>">
