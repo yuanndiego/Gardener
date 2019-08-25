@@ -4,6 +4,30 @@ require_relative 'models/plant'
 require_relative 'models/task'
 require_relative 'models/todo'
 
+u = User.new()
+u.username = 'Sam'
+u.email = '1'
+u.password = '123'
+u.save
+
+u = User.new()  
+u.username = 'Yu-Ann'
+u.email = '2'
+u.password = '123'
+u.save
+
+u = User.new()
+u.username = 'Chris'
+u.email = '3'
+u.password = '123'
+u.save
+
+u = User.new()
+u.username = 'Latha'
+u.email = '4'
+u.password = '123'
+u.save
+
 u1 = User.new()
 u1.username = 'Jimremrermy Brantingtonington'
 u1.email = '1@1.com'
