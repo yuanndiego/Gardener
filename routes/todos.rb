@@ -1,5 +1,5 @@
 require 'pry'
-get '/todo' do
+get '/todos' do
     redirect '/login' unless logged_in?
 
     #  Reference SQL
@@ -10,7 +10,7 @@ get '/todo' do
     erb :to_do
 end
 
-post '/api/todo' do
+post '/api/todos' do
     redirect '/login' unless logged_in?
     todo = Todo.find_by(id: params[:todo_id])
     if todo.complete == false
@@ -24,10 +24,38 @@ post '/api/todo' do
     end
 end
 
-get '/api/todo' do
+get '/api/todos/complete' do
     redirect '/login' unless logged_in?
-
     # Need to filter todos by user id's
+    content_type :json
+    @todos = Todo.joins(:plant, :task).includes(:plant, :task).where(user_id: current_user.id).where(complete: true).order(due_date: :desc)
+    @todos = @todos.map { |todo| 
+        {
+            'task_id' => todo.task_id,
+            'due_date_month' => Date::MONTHNAMES[todo.task.due_date.month][0..2],
+            'due_date_day' => todo.task.due_date.day,
+            'task_name' => todo.task.name,
+            'plant_common_name' => todo.plant.common_name,
+            'complete' => true
+        }
+    }
+    @todos.to_json
+end
 
-    todo = Todo.find_by(id: params[:todo_id])
+get '/api/todos/incomplete' do
+    redirect '/login' unless logged_in?
+    # Need to filter todos by user id's
+    content_type :json
+    @todos = Todo.joins(:plant, :task).includes(:plant, :task).where(user_id: current_user.id).where(complete: false).order(due_date: :desc)
+    @todos = @todos.map { |todo| 
+        {
+            'task_id' => todo.task_id,
+            'due_date_month' => Date::MONTHNAMES[todo.task.due_date.month][0..2],
+            'due_date_day' => todo.task.due_date.day,
+            'task_name' => todo.task.name,
+            'plant_common_name' => todo.plant.common_name,
+            'complete' => false
+        }
+    }
+    @todos.to_json
 end
