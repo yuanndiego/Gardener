@@ -30,6 +30,7 @@ end
 get '/' do
   redirect '/login' unless logged_in?
   redirect '/my_plants'
+  erb :index
 end
 
 require_relative 'routes/plants'
