@@ -76,12 +76,24 @@ body {
   justify-content: center;
   background-color: var(--bottom-half-nav);
 }
+
+.nav-images {
+	height: 1.3em;
+	width: 1.3em;
+	opacity: 0.4;
+	vertical-align: middle;
+}
+
+/* .user-welcome {
+	fill: #E9E4D2;
+} */
+
 .menu-link{
   text-align: center;
   background-color: var(--bottom-half-nav);
   padding: 0.5em;
-  padding-left: 1.5em;
-  padding-right: 1.5em;
+  padding-left: 3.5em;
+  padding-right: 3.5em;
   text-decoration: none;
   color:var(--text-and-top-half-nav);
   font-size: 1em;
@@ -108,6 +120,10 @@ body {
 .bottom-navigation{
   height: 2.3em;
   background-color: var(--text-and-top-half-nav);
+  color: #9AB584;
+  text-align: center;
+  padding-top: 0.5em;
+  font-size: 0.8em;
 }
 /* Layout Page CSS ~ END */
 
@@ -659,7 +675,7 @@ form.register input {
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 0.5em;
+  padding: 0.3em;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -675,11 +691,16 @@ form.register input {
 
 
 .delete-image {
-	width: 35px;
-	height: 35px;
 	opacity: 0.5;
-	align-items: end; 
-	padding-right: 10px;
+	padding-right: 15px;
+}
+
+.btn-no-btn {
+	background-color: #E9E4D2;
+	border: none;
+	padding: 0.2em;
+	text-decoration: none;
+	display: inline-block;
 }
 
 .plant-ui-card-container:hover .plant_info {

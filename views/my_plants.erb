@@ -1,10 +1,9 @@
-
 <main class="yield-container">
 
     <div class = "plants-container">
         <div class = "my-plants-header">
             <h1>MY PLANTS</h1>
-            <p> We may have more plants for you to add to your garden. Add plants to see our full library of plants</p>
+            <p> We may have more plants for you to add to your garden. Hit 'add plants' to see our full library of plants</p>
         </div>
 
         <div class = "plants-body">
@@ -17,7 +16,12 @@
                             <div><%= plant.common_name.upcase %></div>
                             <div><%= plant.scientific_name %> </div>
                         </div>
-                        <div class = "delete-image"><img src="/icon_assets/24px.svg" alt=""></div>
+                        <form action="/my_plants/<%= plant.id%>" method="post">
+                            <input type="hidden" name="_method" value="delete">
+                            <div>
+                                <button class="btn-no-btn"> <img class = "delete-image" src="/icon_assets/24px.svg" alt=""></button>
+                            </div>
+                        </form>
                     </div>
             </article> 
             <% end %>
@@ -31,10 +35,6 @@
                 </article>
             </a>
         </div>
-
-
-
-
 
         <a href="#openModal"> <img class = "add-plant-image" src="/icon_assets/addplant2.png" alt="" srcset=""></a>
 
