@@ -13,30 +13,30 @@ end
 post '/api/todos' do
     redirect '/login' unless logged_in?
     todo = Todo.find_by(id: params[:todo_id])
-    if todo.complete == false
-        todo = Todo.find_by(id: params[:todo_id])
-        todo.complete = true
-        todo.save
-    else todo.complete == true
-        todo = Todo.find_by(id: params[:todo_id])
-        todo.complete = false
-        todo.save
+    # binding.pry
+
+    if todo != nil && todo.complete == 1
+        todo.complete = 0;
+    elsif todo != nil
+        todo.complete = 1;
     end
+    todo.save
+    # binding.pry
 end
 
 get '/api/todos/complete' do
     redirect '/login' unless logged_in?
     # Need to filter todos by user id's
     content_type :json
-    @todos = Todo.joins(:plant, :task).includes(:plant, :task).where(user_id: current_user.id).where(complete: true).order(due_date: :desc)
+    @todos = Todo.joins(:plant, :task).includes(:plant, :task).where(user_id: current_user.id).where(complete: 1).order(due_date: :desc)
     @todos = @todos.map { |todo| 
         {
-            'task_id' => todo.task_id,
+            'todo_id' => todo.id,
             'due_date_month' => Date::MONTHNAMES[todo.task.due_date.month][0..2],
             'due_date_day' => todo.task.due_date.day,
             'task_name' => todo.task.name,
             'plant_common_name' => todo.plant.common_name,
-            'complete' => true
+            'complete' => todo.complete
         }
     }
     @todos.to_json
@@ -46,15 +46,15 @@ get '/api/todos/incomplete' do
     redirect '/login' unless logged_in?
     # Need to filter todos by user id's
     content_type :json
-    @todos = Todo.joins(:plant, :task).includes(:plant, :task).where(user_id: current_user.id).where(complete: false).order(due_date: :desc)
+    @todos = Todo.joins(:plant, :task).includes(:plant, :task).where(user_id: current_user.id).where(complete: 0).order(due_date: :desc)
     @todos = @todos.map { |todo| 
         {
-            'task_id' => todo.task_id,
+            'todo_id' => todo.id,
             'due_date_month' => Date::MONTHNAMES[todo.task.due_date.month][0..2],
             'due_date_day' => todo.task.due_date.day,
             'task_name' => todo.task.name,
             'plant_common_name' => todo.plant.common_name,
-            'complete' => false
+            'complete' => todo.complete
         }
     }
     @todos.to_json

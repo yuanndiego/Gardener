@@ -5,7 +5,7 @@
         <div class="panel panelOne">
             <button class="accordionOne"><span>To Dos</span></button>
             <% @todos.each do |todo| %>
-                <% if todo.complete == false %>    
+                <% if todo.complete == 0 %>    
                     <div class="to-do-item">
                         <h1><%= Date::MONTHNAMES[todo.task.due_date.month][0..2] %>: <%= todo.task.name %></h1>
                         <h2><%= todo.plant.common_name %></h2>
@@ -17,7 +17,7 @@
         <div class="panel panelTwo closed">
             <button class="accordionTwo closed"><span>Done</span></button>
             <% @todos.each do |todo| %>
-                <% if todo.complete == true %>    
+                <% if todo.complete == 1 %>    
                     <div class="to-do-item">
                         <h1><%= Date::MONTHNAMES[todo.task.due_date.month][0..2] %>: <%= todo.task.name %></h1>
                         <h2><%= todo.plant.common_name %></h2>
