@@ -29,8 +29,11 @@ var changeCompleteValue = (event) => {
   }).done(function(res) {
       toDoItem.closest('.to-do-item').classList.add('zero-width')
       setTimeout(()=>{
-        toDoItem.closest('.to-do-item').classList.add('zero_height')
-    }, 815);
+        toDoItem.closest('.to-do-item').classList.add('collapse_height')
+        setTimeout(()=>{
+          toDoItem.closest('.to-do-item').classList.add('zero_height')
+        },250);
+      }, 500);
   })
 }
 
