@@ -82,9 +82,9 @@ var collectAndPopulateIncompleteTodos = () => {
 var setWeatherIcon = () => {
   $.ajax({
     dataType: 'json',
-    url: "http://api.openweathermap.org/data/2.5/weather?q=Coburg,aus&APPID=65d2c718348e35c15481b8dbf08c238d"
+    url: "https://api.openweathermap.org/data/2.5/weather?q=Coburg,aus&APPID=65d2c718348e35c15481b8dbf08c238d"
   }).done(function (res) {
-    weatherIcon.setAttribute('src',`http://openweathermap.org/img/wn/${res.weather[0].icon}@2x.png`)
+    weatherIcon.setAttribute('src',`https://openweathermap.org/img/wn/${res.weather[0].icon}@2x.png`)
   })
 }
 
