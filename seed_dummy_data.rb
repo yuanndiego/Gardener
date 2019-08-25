@@ -437,7 +437,7 @@ p1.tasks.each do |task|
     td.user_id = u1.id
     td.plant_id = task.plant_id
     td.task_id = task.id
-    td.complete = false;
+    td.complete = 0;
     td.save
 end
 
@@ -446,7 +446,7 @@ p2.tasks.each do |task|
     td.user_id = u1.id
     td.plant_id = task.plant_id
     td.task_id = task.id
-    td.complete = false;
+    td.complete = 0;
     td.save
 end
 
@@ -455,7 +455,7 @@ p3.tasks.each do |task|
     td.user_id = u1.id
     td.plant_id = task.plant_id
     td.task_id = task.id
-    td.complete = false;
+    td.complete = 0;
     td.save
 end
 # Add u2 Todo
@@ -465,6 +465,6 @@ p1.tasks.each do |task|
     td.user_id = u2.id
     td.plant_id = task.plant_id
     td.task_id = task.id
-    td.complete = false;
+    td.complete = 0;
     td.save
 end

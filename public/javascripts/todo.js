@@ -12,17 +12,69 @@ var panelTwo = document.querySelector('.panelTwo');
 var completeTodos = null;
 var incompleteTodos = null;
 
-var collectCompleteTodos = () => {
+var collectAndPopulateCompleteTodos = () => {
   $.ajax({
     dataType: 'json',
     url: "/api/todos/complete"
-  }).done((res)=>{
-    // Use data to populate dom
-    res.map((todo)=>{
-      completeTodos.push({});
-    })
-    // consider dom state & match
-  })
+  }).done((responses)=>{
+    // Delete all children
+    while (panelTwo.firstChild != null && panelTwo.childElementCount != 1){
+      panelTwo.lastChild.remove();
+    }
+
+    // Add new children from AJAX query
+    responses.forEach((responseElement)=>{
+      var div =  document.createElement('div');
+      div.classList.add('to-do-item');
+      var h1 =  document.createElement('h1');
+      h1.textContent = `${responseElement.due_date_month}: ${responseElement.task_name}`
+      var h2 =  document.createElement('h2');
+      h2.textContent = responseElement.plant_common_name
+      var p =  document.createElement('p');
+      p.classList.add('task_complete_button');
+      p.setAttribute('name','todo_id');
+      p.setAttribute('value',responseElement.todo_id);
+      p.textContent = '🌳'
+
+      div.appendChild(h1);
+      div.appendChild(h2);
+      div.appendChild(p);
+
+      panelTwo.appendChild(div);
+    });
+  }).always(resetEventListeners);
+}
+var collectAndPopulateIncompleteTodos = () => {
+  $.ajax({
+    dataType: 'json',
+    url: "/api/todos/incomplete"
+  }).done((responses)=>{
+    // Delete all children
+    while (panelOne.firstChild != null && panelOne.childElementCount != 1){
+      panelOne.lastChild.remove();
+    }
+
+    // Add new children from AJAX query
+    responses.forEach((responseElement)=>{
+      var div =  document.createElement('div');
+      div.classList.add('to-do-item');
+      var h1 =  document.createElement('h1');
+      h1.textContent = `${responseElement.due_date_month}: ${responseElement.task_name}`
+      var h2 =  document.createElement('h2');
+      h2.textContent = responseElement.plant_common_name
+      var p =  document.createElement('p');
+      p.classList.add('task_complete_button');
+      p.setAttribute('name','todo_id');
+      p.setAttribute('value',responseElement.todo_id);
+      p.textContent = '🌳'
+
+      div.appendChild(h1);
+      div.appendChild(h2);
+      div.appendChild(p);
+
+      panelOne.appendChild(div);
+    });
+  }).always(resetEventListeners);
 }
 
 var StoreApiInformation = () => {
@@ -38,6 +90,7 @@ var StoreApiInformation = () => {
 
 var changeCompleteValue = (event) => {
   var toDoItem = event.target
+  // debugger;
   $.ajax({
     method: 'post',
     url: '/api/todos',
@@ -56,16 +109,19 @@ var changeCompleteValue = (event) => {
 acc1.addEventListener("click", function() {
   this.classList.toggle("closed");
   if (panelOne.classList.contains('closed')){
+    collectAndPopulateIncompleteTodos();
     panelOne.classList.remove('closed');
     panelTwo.classList.add('closed');
   } else {
     panelOne.classList.add('closed');
+    // collectAndPopulateCompleteTodos();
   }
 });
 
 acc2.addEventListener("click", function() {
   this.classList.toggle("closed");
   if (panelTwo.classList.contains('closed')){
+    collectAndPopulateCompleteTodos();
     panelTwo.classList.remove('closed');
     panelOne.classList.add('closed');
   } else {
@@ -73,6 +129,11 @@ acc2.addEventListener("click", function() {
   }
 });
 
-taskCompleteButtons.forEach(taskCompleteButton => {
+var resetEventListeners = () => {
+  var taskCompleteButtons = document.querySelectorAll('.task_complete_button')
+  taskCompleteButtons.forEach(taskCompleteButton => {
     taskCompleteButton.addEventListener('click', changeCompleteValue)
-})
+  })  
+}
+
+resetEventListeners();

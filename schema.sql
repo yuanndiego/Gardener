@@ -36,5 +36,5 @@ CREATE TABLE todos (
     user_id INTEGER REFERENCES users ON DELETE CASCADE,
     plant_id INTEGER REFERENCES plants ON DELETE CASCADE,
     task_id INTEGER REFERENCES tasks ON DELETE CASCADE,
-    complete BOOLEAN
+    complete INTEGER
 );
