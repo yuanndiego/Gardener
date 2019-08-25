@@ -1,8 +1,8 @@
 require 'sinatra'
 require 'sinatra/reloader' if development?
-also_reload File.expand_path(__dir__, 'models/*')
-also_reload File.expand_path(__dir__, 'views/*')
-also_reload File.expand_path(__dir__, 'routes/*')
+also_reload File.expand_path(__dir__, 'models/*') if development?
+also_reload File.expand_path(__dir__, 'views/*') if development?
+also_reload File.expand_path(__dir__, 'routes/*') if development?
 
 require 'bcrypt'
 require_relative 'database_config'
