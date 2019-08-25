@@ -1,4 +1,3 @@
-require 'pry'
 get '/my_plants' do 
     redirect '/login' unless logged_in?
     user_todos = Todo.where(user_id: current_user.id)
@@ -43,7 +42,6 @@ post '/my_plants' do
     end
 
     session[:plants_added] = session[:plants_added].upcase
-    binding.pry
     plants_id_array.each do |plantid|
         
         tasks = Task.where(plant_id: plantid)
