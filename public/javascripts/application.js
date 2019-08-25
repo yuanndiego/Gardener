@@ -14,13 +14,3 @@ const selectPlant = function(event) {
 } 
 
 plantUiCards.forEach(plantUiCard => {plantUiCard.addEventListener('click', selectPlant)})
-
-// creating delete plants. 
-var deletePlantsBtns = document.querySelectorAll(".delete-image")
-
-const deletePlant = function(event) {
-    console.log("hello click");
-    
-}
-
-deletePlantsBtns.forEach(deletePlant => {deletePlantBtn.addEventListener('click', deletePlant)})

@@ -1,4 +1,3 @@
-require 'pry'
 
 get '/my_plants' do 
     redirect '/login' unless logged_in?
@@ -49,10 +48,11 @@ post '/my_plants' do
     redirect '/my_plants'
 end
 
-# delete '/my_plants' do
-#     redirect '/login' unless logged_in?
-#     plant = plant.find(params[:id])
-#     plant.delete
-#     redirect '/my_plants'
-# end
+delete '/my_plants/:id' do
+    redirect '/login' unless logged_in?
+    Todos = Todo.where(plant_id: params[:id])
+    current_user_todos = Todos.select {|todo| todo.user_id == current_user.id}
+    current_user_todos.each {|todo| todo.delete}
+    redirect '/my_plants'
+end
 
