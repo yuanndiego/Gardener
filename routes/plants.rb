@@ -9,10 +9,10 @@ get '/my_plants' do
     add_plants_list = Plant.all.ids - plants_id_arr
     display_plants_arr = add_plants_list.map {|plant| Plant.where(id: plant)}
     @add_plants = display_plants_arr.flatten(1)
+    session[:url] = 'my_plants'
     if @plants.length == 0
         redirect '/plants/new'
     else
-        session[:url] = 'my_plants'
         erb :my_plants
     end
 end
@@ -25,6 +25,7 @@ get '/plants/new' do
     add_plants_list = Plant.all.ids - plants_id_arr
     display_plants_arr =    add_plants_list.map {|plant| Plant.where(id: plant)}
     @plants = display_plants_arr.flatten(1)
+    session[:url] = 'my_plants'
     erb :add_plants
 end
 
