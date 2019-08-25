@@ -71,6 +71,7 @@ body {
 }
 .top-nav-bottom-half {
   height: 2.5em;
+  padding-top: 0.2em;
   display: flex;
   font-size: 1.2em;
   justify-content: center;
@@ -80,8 +81,10 @@ body {
 .nav-images {
 	height: 1.3em;
 	width: 1.3em;
-	opacity: 0.4;
+	opacity: 0.3;
 	vertical-align: middle;
+	padding-bottom: 0.2em;
+	padding-right: 0.2em;
 }
 
 /* .user-welcome {
@@ -130,30 +133,48 @@ body {
 /* My Details Styling */
 .mydetails-container{
   display: flex;
+  justify-content: space-evenly;
   flex-wrap: wrap;
+  padding-top:  5em;
 }
+
+
 .mydetails-container > form {
-  font-size: 1em;
-  line-height: 1.5em;
-  width: 20em;
-  background-color: blue;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  margin: 1em;
-  padding: 1em;
-  border-radius: 1em;
+	font-size: 1em;
+	line-height: 2em;
+	width: 25em;
+	background-color: #E9E4D2;
+	color:#054456;
+	display: flex;
+	flex-direction: column;
+	margin: 1em;
+	padding: 2em 2em 1em 2em;
+	border-radius: 5px;
+}
+
+.my-info-header {
+	color: #054456;
+	font-size: 2em;
+	text-align: center;
+	padding-bottom: 1em
 }
 
 .mydetails-container > form > * {
-  margin-top: 0.25em;
-  margin-bottom: 0.25em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 .label-input-pair{
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
+.label-input-pair > input {
+	padding: 0px 0.8em;
+	border-radius: 5px;
+	border-color: white;
+	border-width: 0;
+
+  }
 .mydetails-container label {
   flex-grow: 0;
 }
@@ -163,11 +184,34 @@ body {
   text-align: center;
 }
 .mydetails-container button {
-  width: 9.5em;
+   width: 100%;
   flex-grow: 0;
-  align-self: flex-end;
-  justify-self: flex-end;
+  align-self: center;
+  justify-self: center;
+  margin-top: 2em;
 }
+
+.update-info-btn {
+    font-family: 'Oswald', sans-serif;
+    background-color: var(--text-and-top-half-nav);
+    color: var(--bottom-half-nav);
+	text-align: center;
+	align-content: center;
+	padding: 7px 15px;
+	width: 100%;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    opacity: 1;
+	border-radius: 5px;
+	border: none;
+}
+
+.update-info-btn:hover {
+    opacity: 0.8;
+    transition: all 0.3s linear;
+}
+
 .user_detail_errors, .user_detail_updates{
   display:flex;
   flex-direction:column;

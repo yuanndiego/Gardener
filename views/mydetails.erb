@@ -1,6 +1,5 @@
 <main class="yield-container">
 
-
     <div class="user_detail_errors">
     <% if session[:password_error] != nil %>
         <div><%=session[:password_error]%></div>
@@ -35,6 +34,7 @@
     <div class="mydetails-container">
     <% current_user = User.first%>
         <form action="/users/<%=current_user.id%>/update" method="post">
+            <h1 class= "my-info-header">MY INFO</h1>
             <input type="hidden" name="user_id" value="<%=current_user.id%>">
             <div class="label-input-pair">
                 <label for="">Username</label>
@@ -56,16 +56,18 @@
                 <label for="">Confirm Password</label>
                 <input type="password" name="confirm_password" value="">
             </div>
-            <button>Update Details</button>
+            <button class = "update-info-btn">Update Details</button>
         </form>
 
         <form action="/users/<%=current_user.id%>/settings" method="post">
+                <h1 class= "my-info-header">MY GARDEN INFO</h1>
             <input type="hidden" name="user_id" value="<%=current_user.id%>">
             <div class="label-input-pair">
                 <label for="">Garden Location</label>
                 <input type="text" name="garden_location" value="Some Setting">
             </div>
             <div class="label-input-pair">
+                
                 <label for="">Setting 2</label>
                 <input type="text" name="setting-1" value="Some Setting">
             </div>
@@ -73,7 +75,8 @@
                 <label for="">Setting 3</label>
                 <input type="text" name="setting-1" value="Some Setting">
             </div>
-            <button>Update Settings</button>
+            <button class = "update-info-btn">Update Settings</button>
         </form>
     </div>
+
 </main>
