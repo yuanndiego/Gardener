@@ -8,6 +8,8 @@ var acc1 = document.querySelector(".accordionOne");
 var acc2 = document.querySelector(".accordionTwo");
 var panelOne = document.querySelector('.panelOne');
 var panelTwo = document.querySelector('.panelTwo');
+var weatherIcon = document.querySelector('.weather-icon')
+var weatherText = document.querySelector('.weather-text')
 
 var completeTodos = null;
 var incompleteTodos = null;
@@ -77,14 +79,12 @@ var collectAndPopulateIncompleteTodos = () => {
   }).always(resetEventListeners);
 }
 
-var StoreApiInformation = () => {
+var setWeatherIcon = () => {
   $.ajax({
     dataType: 'json',
     url: "http://api.openweathermap.org/data/2.5/weather?q=Coburg,aus&APPID=65d2c718348e35c15481b8dbf08c238d"
   }).done(function (res) {
-    if (res.weather[0].main === "Clouds") {
-      weather.classList.add('.clouds')
-    }            
+    weatherIcon.setAttribute('src',`http://openweathermap.org/img/wn/${res.weather[0].icon}@2x.png`)
   })
 }
 
@@ -137,3 +137,4 @@ var resetEventListeners = () => {
 }
 
 resetEventListeners();
+setWeatherIcon();

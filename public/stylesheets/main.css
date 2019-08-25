@@ -57,7 +57,7 @@ body {
   border-radius: 10px;
   font-size: 1em;
   line-height: 1.5em;
-  font-family: Oswald, sans-serif;
+  font-family: 'Oswald', sans-serif;
   margin-left: 1em;
   padding-left: 0.5em;
   padding-right: 0.5em;
@@ -235,20 +235,48 @@ body {
 }
 /* My Details Styling */
 
-
-
 /* Todo page  ~ START */
-.cloud{
-  background: url(/weather_assets/clouds.png);
+.invisible-spacer {
+  height: 0.25em;
 }
-.weather {
-  margin-left: auto;
-  margin-right: 10px;
-  margin-top: 0;
-  width: 100px;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  height: 100px;
+.weather-div {
+  margin: 0 auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  display: flex;
+  border-radius: 1em;
+  height: 5em;
+  align-items: center;
+  min-width: 25em;
+  width: 90%;
+  max-width: 60em;
+}
+.weather-div * {
+  height: 100%;
+  background-color: var(--bottom-half-nav);
+}
+.weather-text {
+  font-family: Oswalsd, sans-serif;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 10em;
+  line-height: 3.25em;
+  font-size: 1.5em;
+  border-top-left-radius: 1em;
+  border-bottom-left-radius: 1em;
+  color: var(--text-and-top-half-nav);
+  font-weight: lighter;
+  border: 2px solid var(--text-and-top-half-nav);
+  border-right: none;
+  text-align: center;
+}
+.weather-icon {
+  width: 5em;
+  height: 5em;
+  border-top-right-radius: 1em;
+  border-bottom-right-radius: 1em;
+  border: 2px solid var(--text-and-top-half-nav);
+  border-left: 1px solid var(--text-and-top-half-nav);
 }
 .container-for-todo {
   display: flex;
