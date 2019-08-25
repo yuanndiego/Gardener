@@ -9,6 +9,22 @@ var acc2 = document.querySelector(".accordionTwo");
 var panelOne = document.querySelector('.panelOne');
 var panelTwo = document.querySelector('.panelTwo');
 
+var completeTodos = null;
+var incompleteTodos = null;
+
+var collectCompleteTodos = () => {
+  $.ajax({
+    dataType: 'json',
+    url: "/api/todos/complete"
+  }).done((res)=>{
+    // Use data to populate dom
+    res.map((todo)=>{
+      completeTodos.push({});
+    })
+    // consider dom state & match
+  })
+}
+
 var StoreApiInformation = () => {
   $.ajax({
     dataType: 'json',
@@ -24,7 +40,7 @@ var changeCompleteValue = (event) => {
   var toDoItem = event.target
   $.ajax({
     method: 'post',
-    url: '/api/todo',
+    url: '/api/todos',
     data: { todo_id: event.target.getAttribute('value') }
   }).done(function(res) {
       toDoItem.closest('.to-do-item').classList.add('zero-width')
