@@ -36,7 +36,7 @@ cd into the repository and then run "bundler" to install dependencies.
 - PostgreSQL
 - JQuery
 - HTML, CSS
-- Weather API ******* Need to add details 
+- [Open Weather API](https://openweathermap.org/api)
 
 Other tooling used:
 - Trello
@@ -60,7 +60,7 @@ Your app must:
 
 1. Brainstormed ideas for MVP of product, keeping track of out-of-scope ideas on trello. 
 2. Completed a draft workflow
-3. Sketched wireframe and created a trello board to finalise stories - see [************Link to planning artefacts]("/need to add link with 1. ER diagram, 2. wireframes, 3. user flow, 4. initial designs.)
+3. Sketched wireframe and created a trello board to finalise stories - see our planning artefacts - 1. [ER diagram](Planning Artefacts/ER Diagram and DB details.png), 2. [Wireframes](Planning Artefacts/Wireframes.jpg), 3. [User flows](Planning Artefacts/Userflows.jpg), 4. [Initial Designs](Planning Artefacts/Initial Designs.png))
 4. Planning and setup- ER diagram, database design, codebase and git repo.
 5. Team members identified a story that they wanted to take on. 
 6. Quickly decided on colour palette, branding and layout of to do and myplants page. 
