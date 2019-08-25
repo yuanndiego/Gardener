@@ -5,7 +5,7 @@
             <h1>MY PLANTS</h1>
             <p> We may have more plants for you to add to your garden. Hit 'add plants' to see our full library of plants</p>
         </div>
-
+        <% if session[:plants_added] != nil%><div class="plants_added"><img class="nav-images" src="/icon_assets/info.svg" alt="Plants Added Information"><%=session[:plants_added]%></div> <% end %>
         <div class = "plants-body">
             <% @plants.each do |plant| %>
             <article class = "my-plant-ui-card-container">

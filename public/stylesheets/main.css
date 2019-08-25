@@ -777,7 +777,9 @@ form.register input {
     opacity: 1;
     transition: all 0.5s linear;
 }
-
+.plants_added{
+  color: var(--text-and-top-half-nav);
+}
 /* Plants Routes Styling ~ END */
 
 /* modal box on plants pag */
