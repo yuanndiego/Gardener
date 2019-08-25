@@ -35,9 +35,9 @@ body {
 }
 .top-nav-top-half{
   font-weight: bolder;
-  font-size: 1.5em;
+  font-size: 1.8em;
   color: var(--general-div-and-highlight-text);
-  height: 3.0em;
+  height: 2.8em;
   background-color: var(--text-and-top-half-nav);
   display: flex;
   justify-content: space-between;
@@ -54,9 +54,9 @@ body {
   color: var(--bottom-half-nav) !important;
   background: none;
   border: 2px solid var(--bottom-half-nav);
-  border-radius: 1.5em;
+  border-radius: 10px;
   font-size: 1em;
-  line-height: 2em;
+  line-height: 1.5em;
   font-family: Oswald, sans-serif;
   margin-left: 1em;
   padding-left: 0.5em;
@@ -66,11 +66,13 @@ body {
 .logout-btn:hover{
   /* border: 2px solid white;
   color: white !important; */
-  background-color: var(--main-bg-color);
+  /* background-color: var(--main-bg-color); */
+  opacity: 0.6;
 }
 .top-nav-bottom-half {
-  height: 2.3em;
+  height: 2.5em;
   display: flex;
+  font-size: 1.2em;
   justify-content: center;
   background-color: var(--bottom-half-nav);
 }
@@ -96,9 +98,10 @@ body {
 }
 
 .username{
-  color: var(--general-div-and-highlight-text);
+  color: var(--bottom-half-nav);
   display: flex;
   align-items: center; 
+  font-size: 0.5em;
 }
 
 
@@ -627,7 +630,7 @@ form.register input {
 
 .plant_info {
   font-weight: bold;
-  background-color: var(--general-div-and-highlight-text);
+  background-color: var(--bottom-half-nav);
   transform: translateY(2px);
   opacity: 0;
   visibility: hidden;
@@ -739,7 +742,7 @@ form.register input {
 .add-plant-image {
     position: fixed;
     box-shadow: 2px grey;
-    top: 6em;
+    top: 9em;
     right: 2em;
     width: 6em;
     height: 6em;
@@ -753,7 +756,7 @@ form.register input {
 
 .add-plant-header {
     padding: 0.5em 0em;
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: bolder;
     text-decoration: underline;
 }
@@ -761,7 +764,7 @@ form.register input {
 .my-plants-header {
 	padding: 8px;
 	color: #E9E4D2;
-	font-size: 2em;
+	font-size: 1.8em;
 	text-align: left;
 	padding-left: 1.5em
 }

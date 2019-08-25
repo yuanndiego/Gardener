@@ -37,6 +37,6 @@ require_relative 'routes/todos'
 require_relative 'routes/sessions'
 require_relative 'routes/users'
 
-get '/:unknown' do
-  erb :unknown_page
-end
+# get '/:unknown' do
+#   erb :unknown_page
+# end
