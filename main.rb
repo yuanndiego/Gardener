@@ -1,5 +1,5 @@
 require 'sinatra'
-require 'sinatra/reloader'
+require 'sinatra/reloader' if development?
 also_reload File.expand_path(__dir__, 'models/*')
 also_reload File.expand_path(__dir__, 'views/*')
 also_reload File.expand_path(__dir__, 'routes/*')

@@ -13,15 +13,12 @@ end
 post '/api/todos' do
     redirect '/login' unless logged_in?
     todo = Todo.find_by(id: params[:todo_id])
-    # binding.pry
-
     if todo != nil && todo.complete == 1
         todo.complete = 0;
     elsif todo != nil
         todo.complete = 1;
     end
     todo.save
-    # binding.pry
 end
 
 get '/api/todos/complete' do
