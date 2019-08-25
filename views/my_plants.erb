@@ -1,7 +1,4 @@
 
-
-
-
 <main class="yield-container">
 
     <div class = "plants-container">
@@ -9,7 +6,7 @@
             <h1>MY PLANTS</h1>
             <p> We may have more plants for you to add to your garden. Add plants to see our full library of plants</p>
         </div>
-        
+
         <div class = "plants-body">
             <% @plants.each do |plant| %>
             <article class = "my-plant-ui-card-container">
@@ -48,7 +45,7 @@
                     <form action="/my_plants" method="post">
                         <h1>Select Plants from Our Library</h1>
                 </div>
-                    <% @plants.each do |plant| %>
+                    <% @add_plants.each do |plant| %>
                     <article class = "plant-ui-card-container">
                         <input class = "plant_selected" type="hidden" name="" value="<%= plant.id%>">
                         <img class="plant_image" src="<%= plant.image_url%>" alt="">
