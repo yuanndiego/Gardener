@@ -14,7 +14,7 @@
                     <div class="to-do-item">
                         <h1><%= Date::MONTHNAMES[todo.task.due_date.month][0..2] %>: <%= todo.task.name %></h1>
                         <h2><%= todo.plant.common_name %></h2>
-                        <p class="task_complete_button" name="todo_id" value="<%= todo.id %>">🌳</p>
+                        <p class="task_complete_button" name="todo_id" value="<%= todo.id %>">☑</p>
                     </div>
                 <% end %>
             <% end %>
