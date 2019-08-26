@@ -68,7 +68,7 @@ var collectAndPopulateIncompleteTodos = () => {
       p.classList.add('task_complete_button');
       p.setAttribute('name','todo_id');
       p.setAttribute('value',responseElement.todo_id);
-      p.textContent = '🌳'
+      p.textContent = '☑'
 
       div.appendChild(h1);
       div.appendChild(h2);
