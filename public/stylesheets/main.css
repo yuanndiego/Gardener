@@ -399,6 +399,11 @@ body {
 /* Todo page  ~ START */
 
 /* Login & Register Styling ~ START */
+.background-image {
+  opacity: 0.7;
+  padding-bottom: 20px;
+}
+
 .logincontainer,.unknown-page-container {
   background-color: var(--main-bg-color);
 	border-radius: 0.5em;
@@ -413,6 +418,7 @@ body {
 }
   
 .loginbtn {
+  font-family: 'Oswald', sans-serif;
   height: 3em;
 	width: 11em;
   padding: 1em;
@@ -420,8 +426,10 @@ body {
 	border-radius: 0.5em;
 	background-color: var(--general-div-and-highlight-text);
 	color: var(--text-and-top-half-nav);
-	font-size: 1.5em;
-	cursor: pointer;
+  font-size: 1.5em;
+  /* font-weight: bold; */
+  cursor: pointer;
+  border-color: #163139;
 	-webkit-transition: all 0.5s ease;
 	-moz-transition: all 0.5s ease;
 	-o-transition: all 0.5s ease;

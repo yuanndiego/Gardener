@@ -1,12 +1,12 @@
 # GARDENER
 
-## Link to app
-[Click here](https://powerful-beyond-84714.herokuapp.com)
+## Link to Gardener
+[Click here](https://mighty-springs-54532.herokuapp.com/login)
 
 
 ## Project Background and Brief
 
-Project 3 is part of GA's Software Engineering Immersive Course. The goal of this project is to build, architect, design and collaboratively build an app within a small team.  
+Project 3 is part of GA's Software Engineering Immersive Course and is a team project. The goal of this project is to build, architect, design and collaboratively build an app within a small team.  
 
 
 ## Getting Started
@@ -60,7 +60,7 @@ Your app must:
 
 1. Brainstormed ideas for MVP of product, keeping track of out-of-scope ideas on trello. 
 2. Completed a draft workflow
-3. Sketched wireframe and created a trello board to finalise stories - see our planning artefacts - 1. [ER diagram](Planning Artefacts/ER Diagram and DB details.png), 2. [Wireframes](Planning Artefacts/Wireframes.jpg), 3. [User flows](Planning Artefacts/Userflows.jpg), 4. [Initial Designs](Planning Artefacts/Initial Designs.png))
+3. Sketched wireframe and created a trello board to finalise stories - see our planning artefacts - 1. [ER diagram](https://github.com/yuanndiego/gardener/blob/master/Planning%20Artefacts/ER%20Diagram%20and%20DB%20details.png), 2. [Wireframes](https://github.com/yuanndiego/gardener/blob/master/Planning%20Artefacts/Wireframes.jpg), 3. [User flows](https://github.com/yuanndiego/gardener/blob/master/Planning%20Artefacts/Userflows.jpg), 4. [Initial Designs](https://github.com/yuanndiego/gardener/blob/master/Planning%20Artefacts/Initial%20Designs.png))
 4. Planning and setup- ER diagram, database design, codebase and git repo.
 5. Team members identified a story that they wanted to take on. 
 6. Quickly decided on colour palette, branding and layout of to do and myplants page. 
@@ -84,3 +84,10 @@ Thanks Brad (aka. the gardener) for allowing us to take data from your googleshe
 [Material design assets](https://material.io/resources/icons/?style=baseline) 
 
 [Icons8 assets](https://icons8.com/)
+
+
+## Gardener Team Members from SEI20 
+[@chrishurt](https://github.com/ChrisHurt)
+[@lathakrishnan](https://github.com/LathaKrishnan)
+[@megamonkey](https://github.com/Mega-Monkey)
+[Me :) yuanndiego](https://github.com/yuanndiego)
