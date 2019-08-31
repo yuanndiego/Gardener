@@ -1,14 +1,14 @@
 /* General Styling ~ START */
 
 :root {
-  --main-bg-color: #C96A6A;
+  --main-bg-color: #DBB2A3;
   /* --main-bg-color: #CA8E74; */
   /* --main-bg-color: #DBB2A3; */
-  --text-and-top-half-nav: #054456;
+  --text-and-top-half-nav: #163139;
   --bottom-half-nav: #E9E4D2;
   --bottom-half-nav-hover: #D1CDBD;
-  --general-div-and-highlight-text: #9AB584;
-  --highlighted-div: #B8CBA8;
+  --general-div-and-highlight-text: #B8CBA8;
+  --highlighted-div: #A5B697;
 }
 .yield-container{
   min-height: calc(100vh - 9em);
@@ -123,7 +123,7 @@ body {
 .bottom-navigation{
   height: 2.3em;
   background-color: var(--text-and-top-half-nav);
-  color: #9AB584;
+  color: #B8CBA8;
   text-align: center;
   padding-top: 0.5em;
   font-size: 0.8em;
@@ -144,7 +144,7 @@ body {
 	line-height: 2em;
 	width: 25em;
 	background-color: #E9E4D2;
-	color:#054456;
+	color:#163139;
 	display: flex;
 	flex-direction: column;
 	margin: 1em;
@@ -153,7 +153,7 @@ body {
 }
 
 .my-info-header {
-	color: #054456;
+	color: #163139;
 	font-size: 2em;
 	text-align: center;
 	padding-bottom: 1em
@@ -227,11 +227,11 @@ body {
   flex-shrink: 1;
 }
 .user_detail_errors > * {
-  background-color: orange;
+  background-color: #E9E4D2;
 }
 .user_detail_updates > * {
-  background-color: green;
-  color: white;
+  background-color: #E9E4D2;
+  color: #163139;
 }
 /* My Details Styling */
 
@@ -701,7 +701,7 @@ form.register input {
   padding: 0.8em;
   margin: 1em 0em;
   background-color: var(--bottom-half-nav);
-  border: 2px solid #054456;
+  border: 2px solid #163139;
   box-shadow: 2px grey;
   border-radius: 5px;
 }
@@ -746,7 +746,7 @@ form.register input {
 }
 
 .plant_details {
-	color: #054456;
+	color: #163139;
 	font-size: 1.3em;
 	align-items: left;
 	padding: 5px;
@@ -819,7 +819,7 @@ form.register input {
 }
 
 .close {
-	background: #054456;
+	background: #163139;
 	color: #E9E4D2;
 	line-height: 2em;
 	position: absolute;
@@ -870,7 +870,7 @@ form.register input {
 
 .my-plants-header {
 	padding: 8px;
-	color: #E9E4D2;
+	color: #163139;
 	font-size: 1.8em;
 	text-align: left;
 	padding-left: 1.5em
@@ -878,7 +878,7 @@ form.register input {
 
 .my-plants-header > p {
 	padding: 2px;
-	color: #E9E4D2;
+	color: #163139;
 	font-size: 0.5em;
 	text-align: left;
 	margin: 0;
