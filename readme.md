@@ -1,7 +1,7 @@
 # GARDENER
 
 ## Link to Gardener
-[Click here](https://mighty-springs-54532.herokuapp.com/login)
+[Click here](https://gardener-plant-buddy.herokuapp.com/login)
 
 
 ## Project Background and Brief
